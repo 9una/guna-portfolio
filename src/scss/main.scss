@@ -1,0 +1,57 @@
+@import "_variables";
+@import "_mixins";
+
+#container {
+  margin-top: 61px;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  height: calc(100vh - 61px);
+  transition: transform 0.3s;
+  .wrap {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    main,
+    section {
+      width: 25%;
+      height: 100%;
+      border-right: 1px solid $navy;
+    }
+    main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 2fr 1fr;
+      background: $navy;
+      gap: 1px;
+      & > div {
+        background: $beige;
+      }
+      .text {
+        grid-row: span 2;
+      }
+      .recent {
+      }
+      .banner {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        a {
+        }
+        span {
+          display: inline-block;
+          background: $navy;
+        }
+      }
+    }
+  }
+}
+
+/* media-query */
+@include laptop {
+  // ~ 978
+}
+@include tablet {
+  // ~ 768
+}
+@include mobile {
+  // ~ 414
+}

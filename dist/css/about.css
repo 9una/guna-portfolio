@@ -1,0 +1,19 @@
+#container .wrap {
+  height: 100%;
+}
+#container .wrap #about {
+  height: 300%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  background: #412b8d;
+  gap: 1px;
+}
+#container .wrap #about > div {
+  background: #feeedf;
+}
+#container .wrap #about .skill,
+#container .wrap #about .history {
+  grid-column: span 2;
+}
+/* media-query */

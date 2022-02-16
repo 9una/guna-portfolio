@@ -1,0 +1,42 @@
+@import "_variables";
+@import "_mixins";
+
+#container {
+  .wrap {
+    height: 100%;
+    #about {
+      height: 300%;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      background: $navy;
+      gap: 1px;
+      & > div {
+        background: $beige;
+      }
+      .img {
+      }
+      .text {
+      }
+      .skill,
+      .history {
+        grid-column: span 2;
+      }
+      .skill {
+      }
+      .history {
+      }
+    }
+  }
+}
+
+/* media-query */
+@include laptop {
+  // ~ 978
+}
+@include tablet {
+  // ~ 768
+}
+@include mobile {
+  // ~ 414
+}

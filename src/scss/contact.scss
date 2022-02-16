@@ -1,0 +1,13 @@
+@import "_variables";
+@import "_mixins";
+
+/* media-query */
+@include laptop {
+  // ~ 978
+}
+@include tablet {
+  // ~ 768
+}
+@include mobile {
+  // ~ 414
+}

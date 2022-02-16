@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@100;300;600;800&family=Noto+Sans+KR:wght@300;700&family=Roboto:wght@300;500;900&display=swap");
+header,
+nav {
+  position: fixed;
+  left: 0;
+  z-index: 1;
+  background: #feeedf;
+}
+
+header {
+  top: 0;
+  width: 100%;
+  padding: 0 20px;
+  border-bottom: 1px solid #412b8d;
+}
+header .gnb {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .gnb .home {
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  background: #412b8d;
+  color: white;
+  padding: 5px 6px 5px 10px;
+}
+header .gnb div {
+  text-align: right;
+}
+header .gnb .menu-btn {
+  display: none;
+}
+
+nav {
+  top: 61px;
+  width: 250px;
+  height: calc(100vh - 61px);
+  border-right: 1px solid #412b8d;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+nav .lnb {
+  display: inline-block;
+  text-align: right;
+}
+nav .lnb button {
+  font-size: 2.5em;
+  padding: 10px 8px;
+  font-weight: bold;
+  position: relative;
+}
+nav .lnb button:hover {
+  color: #3448ff;
+}
+@-webkit-keyframes line-trough {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+nav .lnb button:hover::after {
+  content: "";
+  height: 2px;
+  background: #3448ff;
+  display: inline-block;
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  animation: line-trough 0.5s forwards;
+}
+nav .lnb-footer {
+  text-align: right;
+}
+
+/* media-query */
+#container {
+  margin-top: 61px;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  height: calc(100vh - 61px);
+  transition: transform 0.3s;
+}
+#container .wrap {
+  display: flex;
+  width: 400%;
+  height: 100%;
+}
+#container .wrap main,
+#container .wrap section {
+  width: 25%;
+  height: 100%;
+  border-right: 1px solid #412b8d;
+}
+#container .wrap main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 2fr 1fr;
+  background: #412b8d;
+  gap: 1px;
+}
+#container .wrap main > div {
+  background: #feeedf;
+}
+#container .wrap main .text {
+  grid-row: span 2;
+}
+#container .wrap main .banner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+#container .wrap main .banner span {
+  display: inline-block;
+  background: #412b8d;
+}
+
+/* media-query */
+#container .wrap {
+  height: 100%;
+}
+#container .wrap #about {
+  height: 300%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  background: #412b8d;
+  gap: 1px;
+}
+#container .wrap #about > div {
+  background: #feeedf;
+}
+#container .wrap #about .skill,
+#container .wrap #about .history {
+  grid-column: span 2;
+}
+/* media-query */
+#container .wrap #portfolio {
+  position: relative;
+  height: 100%;
+}
+#container .wrap #portfolio .mockup {
+  border-bottom: 1px solid #412b8d;
+  height: 60%;
+}
+#container .wrap #portfolio .text {
+  height: 40%;
+}
+#container .wrap #portfolio .link {
+  width: 300px;
+  height: 300px;
+  background: white;
+  color: black;
+  cursor: grab;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  border: 3px solid #412b8d;
+}
+
+/* media-query */
+/* media-query */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  font-size: 13px;
+  line-height: 1.3;
+  background: #feeedf;
+  letter-spacing: -0.02em;
+  color: #412b8d;
+  font-family: "Montserrat", "Roboto", "Noto Sans KR", "Abril Fatface", cursive, sans-serif;
+}
+
+button,
+html [type=button] {
+  -webkit-appearance: none;
+}
+
+a,
+button {
+  font-family: "Montserrat", "Noto Sans KR", "Roboto", sans-serif;
+  color: #412b8d;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.skip {
+  display: none !important;
+  font-size: 0 !important;
+}
+
+/* media-query */

@@ -1,0 +1,24 @@
+#container .wrap #portfolio {
+  position: relative;
+  height: 100%;
+}
+#container .wrap #portfolio .mockup {
+  border-bottom: 1px solid #412b8d;
+  height: 60%;
+}
+#container .wrap #portfolio .text {
+  height: 40%;
+}
+#container .wrap #portfolio .link {
+  width: 300px;
+  height: 300px;
+  background: white;
+  color: black;
+  cursor: grab;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  border: 3px solid #412b8d;
+}
+
+/* media-query */

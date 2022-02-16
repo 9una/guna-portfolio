@@ -1,0 +1,81 @@
+header,
+nav {
+  position: fixed;
+  left: 0;
+  z-index: 1;
+  background: #feeedf;
+}
+
+header {
+  top: 0;
+  width: 100%;
+  padding: 0 20px;
+  border-bottom: 1px solid #412b8d;
+}
+header .gnb {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .gnb .home {
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  background: #412b8d;
+  color: white;
+  padding: 5px 6px 5px 10px;
+}
+header .gnb div {
+  text-align: right;
+}
+header .gnb .menu-btn {
+  display: none;
+}
+
+nav {
+  top: 61px;
+  width: 250px;
+  height: calc(100vh - 61px);
+  border-right: 1px solid #412b8d;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+nav .lnb {
+  display: inline-block;
+  text-align: right;
+}
+nav .lnb button {
+  font-size: 2.5em;
+  padding: 10px 8px;
+  font-weight: bold;
+  position: relative;
+}
+nav .lnb button:hover {
+  color: #3448ff;
+}
+@-webkit-keyframes line-trough {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+nav .lnb button:hover::after {
+  content: "";
+  height: 2px;
+  background: #3448ff;
+  display: inline-block;
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  animation: line-trough 0.5s forwards;
+}
+nav .lnb-footer {
+  text-align: right;
+}
+
+/* media-query */

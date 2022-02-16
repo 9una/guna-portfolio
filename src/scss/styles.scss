@@ -1,0 +1,64 @@
+@import "_variables";
+@import "_mixins";
+@import "header";
+@import "main";
+@import "about";
+@import "portfolio";
+@import "contact";
+
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@100;300;600;800&family=Noto+Sans+KR:wght@300;700&family=Roboto:wght@300;500;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+body {
+  width: 100%;
+  font-size: 13px;
+  line-height: 1.3;
+  background: $beige;
+  letter-spacing: -0.02em;
+  color: $navy;
+  font-family: "Montserrat", "Roboto", "Noto Sans KR", "Abril Fatface", cursive,
+    sans-serif;
+}
+
+button,
+html [type="button"] {
+  -webkit-appearance: none;
+} //ios적용
+
+a,
+button {
+  font-family: "Montserrat", "Noto Sans KR", "Roboto", sans-serif;
+  color: $navy;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wrapper {
+}
+.skip {
+  display: none !important;
+  font-size: 0 !important;
+}
+
+/* media-query */
+@include laptop {
+  // ~ 978
+}
+@include tablet {
+  // ~ 768
+}
+@include mobile {
+  // ~ 414
+}

@@ -1,0 +1,92 @@
+@import "_variables";
+@import "_mixins";
+
+header,
+nav {
+  position: fixed;
+  left: 0;
+  z-index: 1;
+  background: $beige;
+}
+header {
+  top: 0;
+  width: 100%;
+  padding: 0 20px;
+  border-bottom: 1px solid $navy;
+  .gnb {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .home {
+      font-size: 1.5em;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      background: $navy;
+      color: white;
+      padding: 5px 6px 5px 10px;
+    }
+    div {
+      text-align: right;
+    }
+    .menu-btn {
+      //모바일
+      display: none;
+    }
+  }
+}
+nav {
+  top: 61px;
+  width: 250px;
+  height: calc(100vh - 61px);
+  border-right: 1px solid $navy;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .lnb {
+    display: inline-block;
+    text-align: right;
+    button {
+      font-size: 2.5em;
+      padding: 10px 8px;
+      font-weight: bold;
+      position: relative;
+      &:hover {
+        color: $blue;
+        @-webkit-keyframes line-trough {
+          from {
+            width: 0;
+          }
+          to {
+            width: 100%;
+          }
+        }
+        &::after {
+          content: "";
+          height: 2px;
+          background: $blue;
+          display: inline-block;
+          position: absolute;
+          bottom: 25px;
+          left: 0;
+          animation: line-trough 0.5s forwards;
+        }
+      }
+    }
+  }
+  .lnb-footer {
+    text-align: right;
+  }
+}
+
+/* media-query */
+@include laptop {
+  // ~ 978
+}
+@include tablet {
+  // ~ 768
+}
+@include mobile {
+  // ~ 414
+}
