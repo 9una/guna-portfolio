@@ -2,12 +2,13 @@
 @import "_mixins";
 
 #container {
-  margin-top: 61px;
-  margin-left: 250px;
   width: calc(100% - 250px);
   height: calc(100vh - 61px);
+  margin-top: 61px;
+  margin-left: 250px;
   transition: transform 0.3s;
-  .wrap {
+  overflow: hidden;
+  .wrap-row {
     display: flex;
     width: 400%;
     height: 100%;
@@ -17,29 +18,33 @@
       height: 100%;
       border-right: 1px solid $navy;
     }
-    main {
+  }
+}
+
+#main {
+  .wrap-column {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2fr 1fr;
+    background: $navy;
+    gap: 1px;
+    & > div {
+      background: $beige;
+    }
+    .text {
+      grid-row: span 2;
+    }
+    .recent {
+    }
+    .banner {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 2fr 1fr;
-      background: $navy;
-      gap: 1px;
-      & > div {
-        background: $beige;
+      grid-template-columns: 2fr 1fr;
+      a {
       }
-      .text {
-        grid-row: span 2;
-      }
-      .recent {
-      }
-      .banner {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        a {
-        }
-        span {
-          display: inline-block;
-          background: $navy;
-        }
+      span {
+        display: inline-block;
+        background: $navy;
       }
     }
   }
@@ -48,9 +53,42 @@
 /* media-query */
 @include laptop {
   // ~ 978
+  #container {
+    margin-top: 112px;
+    margin-left: 0;
+    width: 100%;
+    height: calc(100vh - 112px);
+    margin-top: 112px;
+  }
 }
 @include tablet {
   // ~ 768
+  #main {
+    .wrap-column {
+      height: initial;
+      display: flex;
+      flex-direction: column;
+      background: $navy;
+      gap: 1px;
+      .text {
+        height: 80vh;
+        h1 {
+        }
+      }
+      .recent {
+        height: 50vh;
+      }
+      .banner {
+        display: flex;
+        flex-direction: column;
+        a {
+          border-bottom: 1px solid $navy;
+        }
+        span {
+        }
+      }
+    }
+  }
 }
 @include mobile {
   // ~ 414

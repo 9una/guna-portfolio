@@ -138,7 +138,8 @@ input {
   padding: 0;
 }
 button:focus,
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
 }
 button {

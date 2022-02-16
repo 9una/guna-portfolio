@@ -1,41 +1,77 @@
 #container {
-  margin-top: 61px;
-  margin-left: 250px;
   width: calc(100% - 250px);
   height: calc(100vh - 61px);
+  margin-top: 61px;
+  margin-left: 250px;
   transition: transform 0.3s;
+  overflow: hidden;
 }
-#container .wrap {
+#container .wrap-row {
   display: flex;
   width: 400%;
   height: 100%;
 }
-#container .wrap main,
-#container .wrap section {
+#container .wrap-row main,
+#container .wrap-row section {
   width: 25%;
   height: 100%;
   border-right: 1px solid #412b8d;
 }
-#container .wrap main {
+
+#main .wrap-column {
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 2fr 1fr;
   background: #412b8d;
   gap: 1px;
 }
-#container .wrap main > div {
+#main .wrap-column > div {
   background: #feeedf;
 }
-#container .wrap main .text {
+#main .wrap-column .text {
   grid-row: span 2;
 }
-#container .wrap main .banner {
+#main .wrap-column .banner {
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
-#container .wrap main .banner span {
+#main .wrap-column .banner span {
   display: inline-block;
   background: #412b8d;
 }
 
 /* media-query */
+@media (max-width: 978px) {
+  #container {
+    margin-top: 112px;
+    margin-left: 0;
+    width: 100%;
+    height: calc(100vh - 112px);
+    margin-top: 112px;
+  }
+}
+@media (max-width: 768px) {
+  #main .wrap-column {
+    height: initial;
+    display: flex;
+    flex-direction: column;
+    background: #412b8d;
+    gap: 1px;
+  }
+  #main .wrap-column .text {
+    height: 80vh;
+  }
+  #main .wrap-column .recent {
+    height: 50vh;
+  }
+  #main .wrap-column .banner {
+    display: flex;
+    flex-direction: column;
+  }
+  #main .wrap-column .banner a {
+    border-bottom: 1px solid #412b8d;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

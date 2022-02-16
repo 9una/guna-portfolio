@@ -1,19 +1,112 @@
-#container .wrap {
+#about {
+  width: 100%;
   height: 100%;
+  overflow: auto;
 }
-#container .wrap #about {
+#about .wrap-column {
   height: 300%;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-template-rows: repeat(3, 1fr);
   background: #412b8d;
   gap: 1px;
 }
-#container .wrap #about > div {
+#about .wrap-column > div {
   background: #feeedf;
 }
-#container .wrap #about .skill,
-#container .wrap #about .history {
+#about .wrap-column .img {
+  position: relative;
+}
+#about .wrap-column .img .emoji {
+  font-size: 20vw;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  transition: all 0.2s;
+}
+#about .wrap-column .text {
+  padding: 30px;
+  font-size: 1.3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#about .wrap-column .text p {
+  line-height: 1.5;
+}
+#about .wrap-column .skill,
+#about .wrap-column .history {
+  padding: 30px;
   grid-column: span 2;
 }
+#about .wrap-column .skill h2,
+#about .wrap-column .history h2 {
+  font-size: 5.5vw;
+  margin-bottom: 30px;
+}
+#about .wrap-column .skill .cont,
+#about .wrap-column .history .cont {
+  height: 80%;
+}
+#about .wrap-column .skill .cont > div,
+#about .wrap-column .history .cont > div {
+  border: 1px solid #412b8d;
+}
+#about .wrap-column .skill .cont {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+#about .wrap-column .history .cont {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#about .wrap-column .history .cont > div {
+  height: 25%;
+  display: flex;
+  gap: 20px;
+}
+#about .wrap-column .history .cont > div h3 {
+  font-size: 3vw;
+}
+#about .wrap-column .history .cont > div div {
+  font-size: 2vw;
+  padding-top: 7px;
+}
+#about .wrap-column .history .cont > div:nth-child(2) h3, #about .wrap-column .history .cont > div:nth-child(4) h3 {
+  order: 2;
+}
+#about .wrap-column .history .cont > div:nth-child(2) div, #about .wrap-column .history .cont > div:nth-child(4) div {
+  order: 1;
+}
+
 /* media-query */
+@media (max-width: 978px) {
+  #about .wrap-column {
+    display: flex;
+    flex-direction: column;
+  }
+  #about .wrap-column .img {
+    height: 35vh;
+  }
+  #about .wrap-column .img .emoji {
+    font-size: 16em;
+    top: 8vh;
+    transform: translate(-50%, 0) rotate(15deg);
+  }
+  #about .wrap-column .text {
+    height: 65vh;
+    text-align: center;
+    padding: 90px 0;
+    font-size: 2.5vw;
+  }
+  #about .wrap-column .skill,
+#about .wrap-column .history {
+    height: 100vh;
+  }
+}
+
+/*# sourceMappingURL=about.css.map */

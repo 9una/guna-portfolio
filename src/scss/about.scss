@@ -1,30 +1,94 @@
 @import "_variables";
 @import "_mixins";
 
-#container {
-  .wrap {
-    height: 100%;
-    #about {
-      height: 300%;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: repeat(3, 1fr);
-      background: $navy;
-      gap: 1px;
-      & > div {
-        background: $beige;
+#about {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  .wrap-column {
+    height: 300%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    background: $navy;
+    gap: 1px;
+    & > div {
+      background: $beige;
+    }
+    .img {
+      position: relative;
+      .emoji {
+        font-size: 20vw;
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%) rotate(-20deg);
+        transition: all 0.2s;
       }
-      .img {
+    }
+    .text {
+      padding: 30px;
+      font-size: 1.3em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        line-height: 1.5;
       }
-      .text {
+      span {
       }
-      .skill,
-      .history {
-        grid-column: span 2;
+    }
+    .skill,
+    .history {
+      padding: 30px;
+      grid-column: span 2;
+      h2 {
+        font-size: 5.5vw;
+        margin-bottom: 30px;
       }
-      .skill {
+      .cont {
+        height: 80%;
+        & > div {
+          border: 1px solid $navy;
+        }
       }
-      .history {
+    }
+    .skill {
+      .cont {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        & > div {
+        }
+      }
+    }
+    .history {
+      .cont {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        & > div {
+          height: 25%;
+          display: flex;
+          gap: 20px;
+          h3 {
+            font-size: 3vw;
+          }
+          div {
+            font-size: 2vw;
+            padding-top: 7px;
+          }
+          &:nth-child(2),
+          &:nth-child(4) {
+            h3 {
+              order: 2;
+            }
+            div {
+              order: 1;
+            }
+          }
+        }
       }
     }
   }
@@ -33,6 +97,30 @@
 /* media-query */
 @include laptop {
   // ~ 978
+  #about {
+    .wrap-column {
+      display: flex;
+      flex-direction: column;
+      .img {
+        height: 35vh;
+        .emoji {
+          font-size: 16em;
+          top: 8vh;
+          transform: translate(-50%, 0) rotate(15deg);
+        }
+      }
+      .text {
+        height: 65vh;
+        text-align: center;
+        padding: 90px 0;
+        font-size: 2.5vw;
+      }
+      .skill,
+      .history {
+        height: 100vh;
+      }
+    }
+  }
 }
 @include tablet {
   // ~ 768
