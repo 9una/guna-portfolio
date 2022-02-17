@@ -72,6 +72,13 @@
 }
 
 /* media-query */
+@media (max-width: 978px) {
+  #contact .contact-form input .send-btn,
+#contact .contact-form textarea .send-btn,
+#contact .contact-form form .send-btn {
+    font-size: 2em;
+  }
+}
 @media (max-width: 768px) {
   #contact {
     display: block;

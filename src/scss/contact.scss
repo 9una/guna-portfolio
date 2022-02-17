@@ -13,9 +13,7 @@
     h2 {
       height: 20%;
       font-size: 5.5vw;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex-center;
     }
     form {
       height: 80%;
@@ -83,6 +81,17 @@
 /* media-query */
 @include laptop {
   // ~ 978
+  #contact {
+    .contact-form {
+      input,
+      textarea,
+      form {
+        .send-btn {
+          font-size: 2em;
+        }
+      }
+    }
+  }
 }
 @include tablet {
   // ~ 768

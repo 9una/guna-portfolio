@@ -10,8 +10,8 @@
   display: flex;
   width: 400%;
   height: 100%;
+  transition: transform 0.3s;
 }
-#container .wrap-row main,
 #container .wrap-row section {
   width: 25%;
   height: 100%;
@@ -44,14 +44,26 @@
 /* media-query */
 @media (max-width: 978px) {
   #container {
-    margin-top: 112px;
-    margin-left: 0;
     width: 100%;
     height: calc(100vh - 112px);
     margin-top: 112px;
+    margin-left: 0;
   }
 }
 @media (max-width: 768px) {
+  #container {
+    width: 100%;
+    height: calc(100vh - 61px);
+    margin-top: 61px;
+  }
+  #container .wrap-row {
+    transition-delay: 0.5s;
+  }
+
+  #main {
+    height: 100%;
+    overflow: auto;
+  }
   #main .wrap-column {
     height: initial;
     display: flex;

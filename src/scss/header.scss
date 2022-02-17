@@ -13,6 +13,7 @@ header {
   width: 100%;
   padding: 0 20px;
   border-bottom: 1px solid $navy;
+  z-index: 999;
   .gnb {
     height: 60px;
     display: flex;
@@ -44,16 +45,20 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.3s;
   .lnb {
     display: inline-block;
     text-align: right;
     button {
       font-size: 2.5em;
       padding: 10px 8px;
-
       position: relative;
       &.active {
         font-weight: bold;
+      }
+      &:active,
+      &:focus {
+        background: none;
       }
       &:hover {
         color: $blue;
@@ -80,6 +85,9 @@ nav {
   }
   .lnb-footer {
     text-align: right;
+    a {
+      font-weight: bold;
+    }
   }
 }
 
@@ -91,7 +99,6 @@ nav {
   nav {
     width: 100%;
     height: 50px;
-    top: 60;
     border-right: 0;
     border-bottom: 1px solid $navy;
     align-items: center;
@@ -121,6 +128,57 @@ nav {
 }
 @include tablet {
   // ~ 768
+  header {
+    .gnb {
+      div {
+        display: none;
+      }
+      .menu-btn {
+        display: block !important;
+        font-size: 1.8em;
+        padding: 0 5px;
+      }
+    }
+  }
+  nav {
+    height: calc(100% - 61px);
+    top: -100%;
+    transition: all 0.5s;
+    &.visible {
+      border-bottom: 1px solid $navy;
+      top: 61px;
+    }
+    .lnb {
+      height: 75%;
+      flex-direction: column;
+      padding: 0;
+      button {
+        width: 100%;
+        height: 25%;
+        border-bottom: 1px solid $navy;
+        &:hover {
+          background: $navy;
+          color: white;
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+    .lnb-footer {
+      height: 25%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding-bottom: 20px;
+      a {
+      }
+      span {
+      }
+    }
+  }
 }
 @include mobile {
   // ~ 414
