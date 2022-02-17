@@ -67,6 +67,10 @@
   display: flex;
   flex-direction: column;
 }
+#contact .slide-img .slide ul li {
+  width: 100%;
+  position: absolute;
+}
 #contact .show-btn {
   display: none;
 }
