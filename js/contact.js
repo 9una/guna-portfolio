@@ -11,7 +11,7 @@ $(document).ready(function() {
         };
         
        //emailjs.send('service ID', 'template ID', 보낼 내용이 담긴 객체)
-        emailjs.send('gmail', 'template_u5gmc2g', templateParams).then(function (response) {
+        emailjs.send('service_cixcr8a', 'template_u5gmc2g', templateParams).then(function (response) {
             console.log('SUCCESS!', response.status, response.text);
         }, function (error) {
             console.log('FAILED...', error);
