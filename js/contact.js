@@ -1,1 +1,0 @@
-// https://ssamlee.tistory.com/13 참고 - 딜레이없는 무한롤링배너
