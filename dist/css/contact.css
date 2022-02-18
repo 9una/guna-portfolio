@@ -1,6 +1,7 @@
 #contact {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1.5fr 1fr;
+  position: relative;
 }
 #contact > div {
   height: 100%;
@@ -53,35 +54,68 @@
   background: #412b8d;
   color: white;
 }
-#contact .slide-img {
-  position: relative;
+#contact .slide-mask {
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: radial-gradient(black 55%, rgba(0, 0, 0, 0) 50%);
+  mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0));
 }
-#contact .slide-img p {
-  padding: 20px;
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+#contact .slide-mask .slide-img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
-#contact .slide-img .slide ul {
+#contact .slide-mask .slide-img .slide-list {
+  height: 4800px;
   display: flex;
   flex-direction: column;
+}
+#contact .slide-mask .slide-img .slide-list .img-list {
+  height: 2400px;
+  display: flex;
+  flex-direction: column;
+}
+#contact .slide-mask .slide-img .slide-list .img-list li {
+  width: 100%;
+  height: 600px;
+}
+#contact .slide-mask .slide-img .animation {
+  animation: infinite_slide 60s linear infinite;
+}
+@keyframes infinite_slide {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+#contact .slide-mask .slide-img:hover .animation {
+  animation-play-state: paused;
+}
+#contact p {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 #contact .show-btn {
   display: none;
 }
 
 /* media-query */
-@media (max-width: 978px) {
+@media (max-width: 979px) {
   #contact .contact-form input .send-btn,
 #contact .contact-form textarea .send-btn,
 #contact .contact-form form .send-btn {
     font-size: 2em;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   #contact {
     display: block;
+  }
+  #contact .contact-form {
+    border-right: 0;
   }
   #contact .contact-form h2 {
     font-size: 4em;
@@ -102,13 +136,16 @@
       transform: rotate(360deg);
     }
   }
+  #contact p {
+    display: none;
+  }
   #contact .show-btn {
     display: block;
     position: absolute;
-    bottom: calc(11% + 40px);
-    right: 40px;
-    width: 100px;
-    height: 100px;
+    bottom: calc(12% + 20px);
+    right: 20px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     border: 2px solid black;
     background: url(../../img/slide_dog_1.JPG) no-repeat 28% 60%;

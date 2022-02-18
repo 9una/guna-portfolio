@@ -15,13 +15,12 @@
 #container .wrap-row section {
   width: 25%;
   height: 100%;
-  border-right: 1px solid #412b8d;
 }
 
 #main .wrap-column {
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr auto;
   grid-template-rows: 2fr 1fr;
   background: #412b8d;
   gap: 1px;
@@ -29,28 +28,184 @@
 #main .wrap-column > div {
   background: #feeedf;
 }
-#main .wrap-column .text {
+#main .wrap-column .main-title {
   grid-row: span 2;
+  padding: 15px 30px 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Abril Fatface", cursive;
+  overflow: hidden;
 }
-#main .wrap-column .banner {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+#main .wrap-column .main-title p {
+  font-size: 12vh;
+  font-weight: 100;
+  line-height: 1;
+  z-index: 2;
 }
-#main .wrap-column .banner span {
+#main .wrap-column .main-title i {
+  position: absolute;
+  z-index: 1;
+}
+#main .wrap-column .main-title i.star-1 {
+  right: 50px;
+  top: 40px;
+  width: 100px;
+  height: 100px;
+  background: url(../../img/star-l.png) no-repeat -308px 0px;
+  background-size: cover;
+}
+#main .wrap-column .main-title i.star-2 {
+  left: 30px;
+  bottom: 230px;
+  width: 80px;
+  height: 80px;
+  background: url(../../img/star-s.png) no-repeat -441px 0px;
+  background-size: cover;
+  opacity: 0.4;
+}
+#main .wrap-column .main-title i.star-3 {
+  right: 100px;
+  bottom: 100px;
+  width: 70px;
+  height: 70px;
+  background: url(../../img/star-s.png) no-repeat -197px 0px;
+  background-size: cover;
+}
+#main .wrap-column .main-title span {
+  font-weight: 100;
+  font-size: 2vw;
+  width: 80%;
+  margin: 0 auto;
+  height: 60px;
+  border: 1px solid #412b8d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#main .wrap-column .recent {
+  padding: 20px;
+  position: relative;
+}
+#main .wrap-column .recent h3 {
+  font-size: 9vh;
+  line-height: 1.2;
+}
+#main .wrap-column .recent .recent-work {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  cursor: pointer;
+}
+#main .wrap-column .recent .recent-work .wrap {
+  width: 240px;
+  height: 260px;
+  border-radius: 50% 50% 0 0;
+  overflow: hidden;
+  border: 5px solid #412b8d;
+}
+#main .wrap-column .recent .recent-work span {
   display: inline-block;
-  background: #412b8d;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.1em;
 }
-
+#main .wrap-column .go-portfolio {
+  width: 100%;
+  max-width: 550px;
+  position: relative;
+  cursor: pointer;
+}
+#main .wrap-column .go-portfolio p {
+  position: absolute;
+  padding: 30px;
+  text-align: left;
+  z-index: 1;
+  font-size: 2em;
+  color: white;
+}
+#main .wrap-column .go-portfolio .slide {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#main .wrap-column .go-portfolio .slide .slide-list {
+  width: 3000px;
+  height: 100%;
+}
+#main .wrap-column .go-portfolio .slide .slide-list .img-list {
+  float: left;
+  width: 1500px;
+  height: 100%;
+}
+#main .wrap-column .go-portfolio .slide .slide-list .img-list .img {
+  width: 250px;
+  height: 100%;
+  float: left;
+  border-right: 1px solid #412b8d;
+}
+#main .wrap-column .go-portfolio .slide .animation {
+  animation: infinite_slide_row 40s linear infinite;
+}
+@keyframes infinite_slide_row {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+#main .wrap-column .go-portfolio .slide::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#main .wrap-column #recent-work-view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  z-index: 3;
+}
+#main .wrap-column #recent-work-view .cont {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  background: #412b8d;
+  color: #feeedf;
+  transition: all 0.3s;
+}
+#main .wrap-column #recent-work-view .cont.active {
+  top: 100%;
+}
+#main .wrap-column #recent-work-view .cont .close-btn {
+  font-size: 3em;
+  color: white;
+}
 /* media-query */
-@media (max-width: 978px) {
+@media (max-width: 979px) {
   #container {
     width: 100%;
     height: calc(100vh - 112px);
     margin-top: 112px;
     margin-left: 0;
   }
+
+  #main .wrap-column .go-portfolio {
+    max-width: 450px;
+  }
 }
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   #container {
     width: 100%;
     height: calc(100vh - 61px);
@@ -71,18 +226,71 @@
     background: #412b8d;
     gap: 1px;
   }
-  #main .wrap-column .text {
-    height: 80vh;
+  #main .wrap-column .main-title {
+    height: calc(100vh - 62px);
+    padding: 20px 30px 40px;
+  }
+  #main .wrap-column .main-title p {
+    font-size: 12vh;
+    margin-bottom: 50px;
+  }
+  #main .wrap-column .main-title span {
+    height: 80px;
+    font-size: 2.5em;
   }
   #main .wrap-column .recent {
-    height: 50vh;
+    padding: 30px 30px 10px;
   }
-  #main .wrap-column .banner {
-    display: flex;
-    flex-direction: column;
+  #main .wrap-column .recent h3 {
+    text-align: right;
+    height: 9vh;
   }
-  #main .wrap-column .banner a {
-    border-bottom: 1px solid #412b8d;
+  #main .wrap-column .recent .recent-work {
+    position: relative;
+    width: max-content;
+    right: initial;
+  }
+  #main .wrap-column .recent .recent-work .wrap {
+    width: 58vw;
+    height: 60vw;
+  }
+  #main .wrap-column .recent .recent-work .wrap img {
+    width: 300%;
+    object-position: -130px 63%;
+  }
+  #main .wrap-column .go-portfolio {
+    max-width: initial;
+    height: 300px;
+  }
+  #main .wrap-column .go-portfolio p {
+    font-size: 3em;
+    line-height: 1;
+  }
+  #main .wrap-column .go-portfolio .slide {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  #main .wrap-column .go-portfolio .slide .slide-list {
+    width: 4200px;
+    height: 100%;
+  }
+  #main .wrap-column .go-portfolio .slide .slide-list .img-list {
+    float: left;
+    width: 2100px;
+    height: 100%;
+  }
+  #main .wrap-column .go-portfolio .slide .slide-list .img-list .img {
+    width: 350px;
+  }
+}
+@media (max-width: 415px) {
+  #main .wrap-column .recent h3 {
+    height: 12vh;
+  }
+  #main .wrap-column .recent .recent-work .wrap {
+    width: 50vw;
+    height: 53vw;
   }
 }
 

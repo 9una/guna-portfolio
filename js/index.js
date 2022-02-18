@@ -46,9 +46,32 @@ function pageMove(){
             wrapRow.style.transform = `translateX(-${position}%)`;
         })
     }
+    
+    const goPortfolio = document.querySelector('.go-portfolio');
+    goPortfolio.addEventListener('click',()=>{
+        curPos = 2;
+        navTab[0].classList.remove('active');
+        navTab[2].classList.add('active');
+        page[2].classList.add('active');
+        wrapRow.style.transform = `translateX(-${curPos * pageWidth}%)`;
+    })
+
     if(window.innerWidth < 769){
         mobileNavClose();
     }
 }
 pageMove();
 window.addEventListener('resize', pageMove);
+
+//홈 - 최근 작업물
+const recentWork = document.querySelector('#main .recent-work');
+const recentView = document.querySelector('#recent-work-view .cont');
+const closeBtn = recentView.querySelector('.close-btn');
+
+recentWork.addEventListener('click', ()=>{
+    recentView.classList.add('active');
+});
+
+closeBtn.addEventListener('click', ()=>{
+    closeBtn.parentElement.classList.remove('active');
+})

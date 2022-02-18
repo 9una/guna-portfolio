@@ -5,87 +5,123 @@
   width: 100%;
   height: 100%;
   overflow: auto;
+  background: url(../../img/slide_dog_3.JPG) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
   .wrap-column {
-    height: 300%;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    // height: 300%;
+    display: flex;
+    flex-direction: column;
     background: $navy;
     gap: 1px;
     & > div {
       background: $beige;
-    }
-    .img {
-      position: relative;
-      .emoji {
-        font-size: 20vw;
-        position: absolute;
-        left: 50%;
-        top: 45%;
-        transform: translate(-50%, -50%) rotate(-20deg);
-        transition: all 0.2s;
-      }
-    }
-    .text {
       padding: 30px;
-      font-size: 1.3em;
+    }
+    .about-text {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      .mimoticon {
+        margin-bottom: 30px;
+        img {
+          width: 380px;
+        }
+      }
       p {
+        width: calc(100% - 380px);
         line-height: 1.5;
+        font-size: 1.3em;
       }
       span {
+        display: inline-block;
+        width: 100%;
       }
     }
     .skill,
     .history {
-      padding: 30px;
-      grid-column: span 2;
-      h2 {
-        font-size: 5.5vw;
-        margin-bottom: 30px;
-      }
       .cont {
         height: 80%;
-        & > div {
-          border: 1px solid $navy;
+        .img {
+        }
+        .text {
+          padding: 10px;
         }
       }
     }
     .skill {
       .cont {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+        text-align: center;
         & > div {
+          .img {
+            span {
+              font-size: 7vw;
+            }
+          }
+          .text {
+            h4 {
+              margin-bottom: 20px;
+              font-size: 1.3em;
+            }
+            p {
+              font-size: 1.1em;
+              line-height: 1.3;
+              word-break: keep-all;
+            }
+          }
+        }
+        .skill-cont {
         }
       }
     }
+    .mind {
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      .title {
+        border-right: 1px solid $navy;
+        overflow: hidden;
+        background: url(../../img/star-s.png) no-repeat center;
+        h4 {
+          height: 100%;
+          @include flex-center;
+          font-size: 2em;
+          transform: rotate(15deg);
+        }
+      }
+      .text {
+        padding: 30px;
+        font-size: 1.2em;
+        line-height: 1.3;
+      }
+    }
     .history {
+      display: flex;
+      padding-bottom: 50px;
+      gap: 50px;
+      h2 {
+        font-size: 5em;
+      }
       .cont {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 30px;
         & > div {
           height: 25%;
           display: flex;
           gap: 20px;
           h3 {
-            font-size: 3vw;
+            font-size: 1.5em;
           }
-          div {
-            font-size: 2vw;
-            padding-top: 7px;
-          }
-          &:nth-child(2),
-          &:nth-child(4) {
-            h3 {
-              order: 2;
-            }
-            div {
-              order: 1;
+          p {
+            font-size: 1.1em;
+            line-height: 1.4;
+            vertical-align: bottom;
+            strong {
+              font-size: 1.2em;
             }
           }
         }
@@ -110,14 +146,30 @@
         }
       }
       .text {
-        height: 65vh;
         text-align: center;
         padding: 90px 0;
-        font-size: 2.5vw;
+        font-size: 1.2em;
       }
       .skill,
       .history {
         height: 100vh;
+        .cont {
+          .img {
+            span {
+              font-size: 4.5em;
+              &.pizza {
+                font-size: 3.5em;
+              }
+            }
+          }
+        }
+      }
+      .skill {
+        .cont {
+          grid-template-columns: repeat(2, 1fr);
+          .skill-cont {
+          }
+        }
       }
     }
   }

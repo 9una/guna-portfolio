@@ -3,7 +3,8 @@
 
 #contact {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1.5fr 1fr;
+  position: relative;
   & > div {
     height: 100%;
     overflow: auto;
@@ -53,25 +54,52 @@
       }
     }
   }
-  .slide-img {
-    position: relative;
-    p {
-      padding: 20px;
-      position: fixed;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-    }
-    .slide {
-      ul {
+  .slide-mask {
+    width: 100%;
+    height: 100%;
+    -webkit-mask-image: radial-gradient(black 55%, rgba(0, 0, 0, 0) 50%);
+    mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0));
+
+    .slide-img {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      .slide-list {
+        height: 4800px;
         display: flex;
         flex-direction: column;
-        li {
-          img {
+        .img-list {
+          height: 2400px;
+          display: flex;
+          flex-direction: column;
+          li {
+            width: 100%;
+            height: 600px;
           }
         }
       }
+      .animation {
+        animation: infinite_slide 60s linear infinite;
+      }
+      @keyframes infinite_slide {
+        0% {
+          transform: translateY(0%);
+        }
+        100% {
+          transform: translateY(-50%);
+        }
+      }
+      &:hover {
+        .animation {
+          animation-play-state: paused;
+        }
+      }
     }
+  }
+  p {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
   }
   .show-btn {
     display: none;
@@ -98,6 +126,7 @@
   #contact {
     display: block;
     .contact-form {
+      border-right: 0;
       h2 {
         font-size: 4em;
       }
@@ -120,13 +149,16 @@
         transform: rotate(360deg);
       }
     }
+    p {
+      display: none;
+    }
     .show-btn {
       display: block;
       position: absolute;
-      bottom: calc(11% + 40px);
-      right: 40px;
-      width: 100px;
-      height: 100px;
+      bottom: calc(12% + 20px);
+      right: 20px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       border: 2px solid black;
       background: url(../../img/slide_dog_1.JPG) no-repeat 28% 60%;

@@ -118,22 +118,13 @@
     .gallery {
       .wrap-column {
         .list {
-          flex-direction: column;
-          background: $navy;
-          height: 300%;
-          gap: 1px;
           display: flex;
+          flex-direction: column;
+          height: 200%;
           .item {
-            display: flex !important;
-            &:nth-child(n + 7) {
-              display: none !important;
-            }
           }
           &.all {
-            height: 300%;
-            .item:nth-child(n + 7) {
-              display: flex;
-            }
+            height: 400%;
           }
         }
       }

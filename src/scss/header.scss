@@ -61,7 +61,6 @@ nav {
         background: none;
       }
       &:hover {
-        color: $blue;
         @-webkit-keyframes line-trough {
           from {
             width: 0;
@@ -72,8 +71,8 @@ nav {
         }
         &::after {
           content: "";
-          height: 2px;
-          background: $blue;
+          height: 1px;
+          background: $navy;
           display: inline-block;
           position: absolute;
           bottom: 25px;
