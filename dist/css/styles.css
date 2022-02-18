@@ -461,9 +461,6 @@ nav .lnb-footer a {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background: url(../../img/slide_dog_3.JPG) no-repeat center;
-  background-size: cover;
-  background-attachment: fixed;
 }
 #about .wrap-column {
   display: flex;
@@ -546,7 +543,7 @@ nav .lnb-footer a {
 }
 #about .wrap-column .history {
   display: flex;
-  padding-bottom: 50px;
+  padding: 30px 40px 60px;
   gap: 50px;
 }
 #about .wrap-column .history h2 {

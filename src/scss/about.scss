@@ -5,9 +5,6 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background: url(../../img/slide_dog_3.JPG) no-repeat center;
-  background-size: cover;
-  background-attachment: fixed;
   .wrap-column {
     // height: 300%;
     display: flex;
@@ -100,7 +97,7 @@
     }
     .history {
       display: flex;
-      padding-bottom: 50px;
+      padding: 30px 40px 60px;
       gap: 50px;
       h2 {
         font-size: 5em;
