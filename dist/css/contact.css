@@ -49,6 +49,7 @@
   font-size: 1.5vw;
   transition: all 0.1s ease-in-out;
   font-weight: bold;
+  cursor: pointer;
 }
 #contact .contact-form form .send-btn:hover {
   background: #412b8d;

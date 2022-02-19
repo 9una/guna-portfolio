@@ -18,6 +18,7 @@
 }
 
 #main .wrap-column {
+  position: relative;
   height: 100%;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -115,7 +116,7 @@
 }
 #main .wrap-column .go-portfolio {
   width: 100%;
-  max-width: 550px;
+  max-width: 500px;
   position: relative;
   cursor: pointer;
 }
@@ -133,16 +134,16 @@
   position: relative;
 }
 #main .wrap-column .go-portfolio .slide .slide-list {
-  width: 3000px;
+  width: 4200px;
   height: 100%;
 }
 #main .wrap-column .go-portfolio .slide .slide-list .img-list {
   float: left;
-  width: 1500px;
+  width: 2100px;
   height: 100%;
 }
 #main .wrap-column .go-portfolio .slide .slide-list .img-list .img {
-  width: 250px;
+  width: 350px;
   height: 100%;
   float: left;
   border-right: 1px solid #412b8d;

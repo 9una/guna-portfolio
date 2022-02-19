@@ -22,6 +22,7 @@
           background: $beige;
           position: relative;
           cursor: pointer;
+          text-align: center;
           @include flex-center;
           &:hover {
           }
@@ -49,6 +50,15 @@
       background: $navy;
       color: white;
     }
+    &.scroll {
+      background: $navy;
+      color: white;
+      cursor: inherit;
+      i {
+        margin: 0 10px;
+        font-size: 0.8em;
+      }
+    }
   }
   .view {
     position: absolute;
@@ -61,16 +71,72 @@
       top: 0;
       width: 100%;
       height: 100%;
-      padding: 30px;
-      background: $navy;
+      background: $beige;
+      gap: 1px;
       color: $beige;
       transition: all 0.3s;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 60px 1fr;
+      & > div {
+        background: $navy;
+      }
       &.active {
         top: 100%;
       }
-      .close-btn {
-        font-size: 3em;
-        color: white;
+      .head {
+        grid-column: span 2;
+        padding: 8px 20px;
+        .close-btn {
+          font-size: 3em;
+          color: $beige;
+        }
+      }
+      .img {
+      }
+      .text {
+        padding: 30px;
+        h5 {
+          font-size: 1.6em;
+          background: $beige;
+          color: $navy;
+          display: inline-block;
+          padding: 3px 10px;
+          margin-bottom: 20px;
+          word-break: keep-all;
+        }
+        .link {
+          font-size: 1.2em;
+          span {
+            display: block;
+            font-weight: bold;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            margin-left: 3px;
+          }
+          a {
+            padding: 0 5px;
+            display: inline-block;
+            color: $beige;
+            line-height: 1.6;
+            text-decoration: underline;
+          }
+        }
+        p {
+          margin: 30px 0 40px;
+          font-size: 1.2em;
+          line-height: 1.5;
+          word-break: keep-all;
+        }
+        .skill {
+          span {
+            display: inline-block;
+            margin-right: 5px;
+            padding: 2px 5px;
+            border: 1px solid $beige;
+            color: $beige;
+          }
+        }
       }
     }
   }

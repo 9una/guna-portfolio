@@ -4,13 +4,15 @@ const view = document.querySelectorAll('.view .cont');
 
 function moreItem(event){
     const btn = event.currentTarget;
-    btn.style.transform = "translateY(100%)";
-    document.querySelector('.gallery').style.height = '100%';
+    // btn.style.transform = "translateY(100%)";
+    // document.querySelector('.gallery').style.height = '100%';
     list.classList.add('all');
-    function btnRemove(){
-        btn.remove();
-    }
-    setTimeout(btnRemove, 500);
+    btn.classList.add('scroll');
+    btn.innerHTML = `<i class="fa-solid fa-angles-down"></i> scroll down <i class="fa-solid fa-angles-down"></i>`
+    // function btnRemove(){
+    //     btn.remove();
+    // }
+    // setTimeout(btnRemove, 500);
 }
 
 thum.forEach(function(item, i){
@@ -26,6 +28,6 @@ thum.forEach(function(item, i){
 view.forEach(function(cont){
     const btn = cont.querySelector('.close-btn');
     btn.addEventListener('click', ()=>{
-        btn.parentElement.classList.remove('active');
+        btn.parentElement.parentElement.classList.remove('active');
     })
 })
