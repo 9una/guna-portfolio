@@ -201,6 +201,9 @@
         }
       }
     }
+    #footer {
+      display: none;
+    }
   }
 }
 
@@ -209,8 +212,8 @@
   // ~ 978
   #container {
     width: 100%;
-    height: calc(100vh - 112px);
-    margin-top: 112px;
+    height: calc(100vh - 111px);
+    margin-top: 111px;
     margin-left: 0;
   }
   #main {
@@ -221,6 +224,31 @@
       }
       .go-portfolio {
         max-width: 450px;
+      }
+      #footer {
+        display: block;
+        grid-column: span 2;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        font-weight: bold;
+        a {
+          display: flex;
+          align-items: center;
+          &::after {
+            content: "";
+            width: 1px;
+            height: 10px;
+            display: inline-block;
+            margin: 0 10px;
+            background: $navy;
+          }
+        }
+        span {
+          margin-right: auto;
+        }
       }
     }
   }
