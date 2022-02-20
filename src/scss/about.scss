@@ -18,7 +18,7 @@
     .about-text {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
+      justify-content: center;
       .mimoticon {
         margin-bottom: 30px;
         img {
@@ -26,7 +26,7 @@
         }
       }
       p {
-        width: calc(100% - 380px);
+        // width: calc(100% - 380px);
         line-height: 1.5;
         font-size: 1.3em;
       }
@@ -148,6 +148,7 @@
       .about-text {
         .text {
           padding-top: 50px;
+          gap: 0;
         }
       }
       .history {
@@ -282,6 +283,28 @@
       .about-text {
         .mimoticon {
           padding: 0 40px;
+        }
+      }
+      .skill {
+        padding: 30px 20px 70px;
+        .cont {
+          .skill-cont {
+            display: flex;
+            flex-direction: column;
+            .img {
+              span {
+                font-size: 25vw;
+                display: inline-block;
+                &.paint {
+                  font-size: 22vw;
+                  margin-bottom: 15px;
+                }
+              }
+            }
+            .text {
+              text-align: center;
+            }
+          }
         }
       }
       .history {

@@ -16,7 +16,7 @@
 #about .wrap-column .about-text {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 #about .wrap-column .about-text .mimoticon {
   margin-bottom: 30px;
@@ -25,7 +25,6 @@
   width: 380px;
 }
 #about .wrap-column .about-text p {
-  width: calc(100% - 380px);
   line-height: 1.5;
   font-size: 1.3em;
 }
@@ -131,6 +130,7 @@
   }
   #about .wrap-column .about-text .text {
     padding-top: 50px;
+    gap: 0;
   }
   #about .wrap-column .history {
     position: relative;
@@ -247,6 +247,24 @@
 @media (max-width: 415px) {
   #about .wrap-column .about-text .mimoticon {
     padding: 0 40px;
+  }
+  #about .wrap-column .skill {
+    padding: 30px 20px 70px;
+  }
+  #about .wrap-column .skill .cont .skill-cont {
+    display: flex;
+    flex-direction: column;
+  }
+  #about .wrap-column .skill .cont .skill-cont .img span {
+    font-size: 25vw;
+    display: inline-block;
+  }
+  #about .wrap-column .skill .cont .skill-cont .img span.paint {
+    font-size: 22vw;
+    margin-bottom: 15px;
+  }
+  #about .wrap-column .skill .cont .skill-cont .text {
+    text-align: center;
   }
   #about .wrap-column .history {
     padding: 20px 20px 40px;

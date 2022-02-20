@@ -51,14 +51,63 @@ img {
   display: none !important;
   font-size: 0 !important;
 }
+.footer {
+  display: none;
+}
 
 /* media-query */
 @include laptop {
   // ~ 978
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px !important;
+    transition: all 0.3s;
+    a {
+      font-weight: bold;
+    }
+    span {
+      display: none;
+    }
+  }
 }
 @include tablet {
   // ~ 768
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    height: 80px;
+    padding: 20px !important;
+    text-align: right;
+    a {
+      display: inline-block;
+      &::after {
+        content: "";
+        width: 1px;
+        height: 10px;
+        display: inline-block;
+        margin: 0 10px;
+        background: $navy;
+      }
+    }
+    span {
+      display: inline-block;
+    }
+    p {
+      grid-column: span 2;
+    }
+  }
 }
 @include mobile {
   // ~ 414
+  .footer {
+    height: 100px;
+    padding: 30px 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9em;
+  }
 }

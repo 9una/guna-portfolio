@@ -5,12 +5,16 @@
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   position: relative;
+  background: $navy;
+  gap: 1px;
   & > div {
-    height: 100%;
-    overflow: auto;
+    background: $beige;
+    &:not(.footer) {
+      height: 100%;
+      overflow: auto;
+    }
   }
   .contact-form {
-    border-right: 1px solid $navy;
     h2 {
       height: 20%;
       font-size: 5.5vw;
@@ -58,8 +62,8 @@
   .slide-mask {
     width: 100%;
     height: 100%;
-    -webkit-mask-image: radial-gradient(black 55%, rgba(0, 0, 0, 0) 50%);
-    mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0));
+    // -webkit-mask-image: radial-gradient(black 55%, rgba(0, 0, 0, 0) 50%);
+    // mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0));
 
     .slide-img {
       width: 100%;
@@ -97,10 +101,11 @@
       }
     }
   }
-  p {
+  & > p {
     position: absolute;
-    bottom: 20px;
+    bottom: 55px;
     right: 20px;
+    color: white;
   }
   .show-btn {
     display: none;
@@ -119,6 +124,14 @@
           font-size: 2em;
         }
       }
+      .send-btn {
+        border: 0;
+      }
+    }
+    .slide-mask {
+    }
+    .footer {
+      grid-column: span 2;
     }
   }
 }
@@ -127,7 +140,9 @@
   #contact {
     display: block;
     .contact-form {
+      height: calc(100% - 80px) !important;
       border-right: 0;
+      border-bottom: 1px solid $navy;
       h2 {
         font-size: 4em;
       }
@@ -139,7 +154,7 @@
         }
       }
     }
-    .slide-img {
+    .slide-mask {
       display: none;
     }
     @keyframes turn-btn {
@@ -150,13 +165,13 @@
         transform: rotate(360deg);
       }
     }
-    p {
+    & > p {
       display: none;
     }
     .show-btn {
       display: block;
       position: absolute;
-      bottom: calc(12% + 20px);
+      bottom: calc(12% + 20px + 80px);
       right: 20px;
       width: 80px;
       height: 80px;
@@ -166,9 +181,31 @@
       background-size: 400%;
       font-size: 0;
       animation: turn-btn 10s infinite linear;
+      transition: all 0.3s;
+      &.active {
+        width: 90vw;
+        height: calc(90vh - 61px);
+        border-radius: 10px;
+        animation-play-state: paused;
+        bottom: 5vh;
+        right: 5vw;
+        background-size: cover;
+      }
+    }
+    .footer {
     }
   }
 }
 @include mobile {
   // ~ 414
+  #contact {
+    .contact-form {
+      height: calc(100% - 100px) !important;
+    }
+    .show-btn {
+      bottom: calc(12% + 20px + 100px);
+    }
+    .footer {
+    }
+  }
 }

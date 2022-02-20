@@ -20,3 +20,8 @@ $(document).ready(function() {
     });
 
 });
+
+const showBtn = document.querySelector('.show-btn');
+showBtn.addEventListener('click', () => {
+    showBtn.classList.add('active');
+})

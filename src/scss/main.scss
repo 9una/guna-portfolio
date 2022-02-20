@@ -201,9 +201,6 @@
         }
       }
     }
-    #footer {
-      display: none;
-    }
   }
 }
 
@@ -225,30 +222,8 @@
       .go-portfolio {
         max-width: 450px;
       }
-      #footer {
-        display: block;
+      .footer {
         grid-column: span 2;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        font-weight: bold;
-        a {
-          display: flex;
-          align-items: center;
-          &::after {
-            content: "";
-            width: 1px;
-            height: 10px;
-            display: inline-block;
-            margin: 0 10px;
-            background: $navy;
-          }
-        }
-        span {
-          margin-right: auto;
-        }
       }
     }
   }
