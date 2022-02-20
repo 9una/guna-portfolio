@@ -164,7 +164,7 @@
             }
           }
           &.all {
-            height: 250%;
+            height: 200%;
             .item:nth-child(n + 5) {
               display: flex;
             }
@@ -190,15 +190,17 @@
       .cont {
         display: flex;
         flex-direction: column;
+        background: $navy;
         .head {
           position: absolute;
         }
         .img {
           height: 50%;
           overflow: auto;
+          border-bottom: 1px solid $beige;
         }
         .text {
-          padding-bottom: 0;
+          padding-bottom: 50px;
           height: 50%;
         }
       }
@@ -213,11 +215,17 @@
         .list {
           display: flex;
           flex-direction: column;
-          height: 200%;
+          height: 100%;
           .item {
+            &:nth-child(n + 3) {
+              display: none;
+            }
           }
           &.all {
-            height: 450%;
+            height: 400%;
+            .item:nth-child(n + 3) {
+              display: flex;
+            }
           }
         }
       }

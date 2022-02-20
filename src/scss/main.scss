@@ -25,8 +25,8 @@
     position: relative;
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 3fr 1fr;
     background: $navy;
     gap: 1px;
     & > div {
@@ -90,29 +90,10 @@
     .recent {
       padding: 20px;
       position: relative;
+      cursor: pointer;
       h3 {
         font-size: 9vh;
         line-height: 1.2;
-      }
-      .recent-work {
-        position: absolute;
-        right: 30px;
-        bottom: 20px;
-        cursor: pointer;
-        .wrap {
-          width: 240px;
-          height: 260px;
-          border-radius: 50% 50% 0 0;
-          overflow: hidden;
-          border: 5px solid $navy;
-        }
-        span {
-          display: inline-block;
-          width: 100%;
-          text-align: center;
-          margin-top: 10px;
-          font-size: 1.1em;
-        }
       }
     }
     .go-portfolio {
@@ -120,85 +101,57 @@
       max-width: 500px;
       position: relative;
       cursor: pointer;
+      padding: 25px 30px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       p {
-        position: absolute;
-        padding: 30px;
         text-align: left;
         z-index: 1;
         font-size: 2em;
-        color: white;
-      }
-      .slide {
-        height: 100%;
-        overflow: hidden;
-        position: relative;
-        .slide-list {
-          width: 4200px;
-          height: 100%;
-          .img-list {
-            float: left;
-            width: 2100px;
-            height: 100%;
-            .img {
-              width: 350px;
-              height: 100%;
-              float: left;
-              border-right: 1px solid $navy;
+        &:nth-child(2) {
+          text-align: right;
+          font-weight: bold;
+          margin-right: 5px;
+          @-webkit-keyframes next {
+            0% {
+              transform: translateX(0);
+            }
+            50% {
+              transform: translateX(10px);
+            }
+            100% {
+              transform: translateX(0);
             }
           }
-        }
-        .animation {
-          animation: infinite_slide_row 40s linear infinite;
-        }
-        @keyframes infinite_slide_row {
-          0% {
-            transform: translateX(0%);
+          i {
+            margin-left: 3px;
+            animation: next 1.5s infinite;
           }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        // &:hover {
-        //   .animation {
-        //     animation-play-state: paused;
-        //   }
-        // }
-        &::after {
-          content: "";
-          background: rgba(0, 0, 0, 0.3);
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
         }
       }
     }
-    #recent-work-view {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: -100%;
+  }
+  .recent-work {
+    display: none;
+    &.active {
+      display: block;
+      overflow: auto;
+      width: calc(25% - 1px);
+      height: calc(100% - 1px);
+      position: fixed;
+      top: 0;
       left: 0;
+      background: $beige;
+      border: 3px solid $navy;
       z-index: 3;
-      .cont {
+      .close-btn {
         position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        padding: 30px;
-        background: $navy;
-        color: $beige;
-        transition: all 0.3s;
-        &.active {
-          top: 100%;
-        }
-        .close-btn {
-          font-size: 3em;
-          color: white;
-        }
-        .text {
-        }
+        left: 20px;
+        top: 8px;
+        font-size: 3em;
+      }
+      div {
       }
     }
   }
@@ -263,47 +216,18 @@
       }
       .recent {
         padding: 30px 30px 10px;
+        height: 350px;
         h3 {
           text-align: right;
           height: 9vh;
         }
-        .recent-work {
-          position: relative;
-          width: max-content;
-          right: initial;
-          .wrap {
-            width: 58vw;
-            height: 60vw;
-            img {
-              width: 300%;
-              object-position: -130px 63%;
-            }
-          }
-        }
       }
       .go-portfolio {
         max-width: initial;
-        height: 300px;
+        height: 250px;
         p {
           font-size: 3em;
           line-height: 1;
-        }
-        .slide {
-          height: 100%;
-          overflow: hidden;
-          position: relative;
-          .slide-list {
-            width: 4200px;
-            height: 100%;
-            .img-list {
-              float: left;
-              width: 2100px;
-              height: 100%;
-              .img {
-                width: 350px;
-              }
-            }
-          }
         }
       }
     }
@@ -316,12 +240,6 @@
       .recent {
         h3 {
           height: 12vh;
-        }
-        .recent-work {
-          .wrap {
-            width: 50vw;
-            height: 53vw;
-          }
         }
       }
     }

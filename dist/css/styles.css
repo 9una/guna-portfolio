@@ -136,13 +136,14 @@ nav .lnb-footer a {
     top: 61px;
   }
   nav .lnb {
-    height: 75%;
+    height: 100%;
     flex-direction: column;
     padding: 0;
   }
   nav .lnb button {
     width: 100%;
     height: 25%;
+    font-size: 6vw;
     border-bottom: 1px solid #412b8d;
   }
   nav .lnb button:hover {
@@ -151,15 +152,6 @@ nav .lnb-footer a {
   }
   nav .lnb button:hover::after {
     display: none;
-  }
-  nav .lnb-footer {
-    height: 25%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    padding-bottom: 20px;
   }
 }
 #container {
@@ -185,8 +177,8 @@ nav .lnb-footer a {
   position: relative;
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 2fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 3fr 1fr;
   background: #412b8d;
   gap: 1px;
 }
@@ -253,109 +245,67 @@ nav .lnb-footer a {
 #main .wrap-column .recent {
   padding: 20px;
   position: relative;
+  cursor: pointer;
 }
 #main .wrap-column .recent h3 {
   font-size: 9vh;
   line-height: 1.2;
-}
-#main .wrap-column .recent .recent-work {
-  position: absolute;
-  right: 30px;
-  bottom: 20px;
-  cursor: pointer;
-}
-#main .wrap-column .recent .recent-work .wrap {
-  width: 240px;
-  height: 260px;
-  border-radius: 50% 50% 0 0;
-  overflow: hidden;
-  border: 5px solid #412b8d;
-}
-#main .wrap-column .recent .recent-work span {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  margin-top: 10px;
-  font-size: 1.1em;
 }
 #main .wrap-column .go-portfolio {
   width: 100%;
   max-width: 500px;
   position: relative;
   cursor: pointer;
+  padding: 25px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 #main .wrap-column .go-portfolio p {
-  position: absolute;
-  padding: 30px;
   text-align: left;
   z-index: 1;
   font-size: 2em;
-  color: white;
 }
-#main .wrap-column .go-portfolio .slide {
-  height: 100%;
-  overflow: hidden;
-  position: relative;
+#main .wrap-column .go-portfolio p:nth-child(2) {
+  text-align: right;
+  font-weight: bold;
+  margin-right: 5px;
 }
-#main .wrap-column .go-portfolio .slide .slide-list {
-  width: 4200px;
-  height: 100%;
-}
-#main .wrap-column .go-portfolio .slide .slide-list .img-list {
-  float: left;
-  width: 2100px;
-  height: 100%;
-}
-#main .wrap-column .go-portfolio .slide .slide-list .img-list .img {
-  width: 350px;
-  height: 100%;
-  float: left;
-  border-right: 1px solid #412b8d;
-}
-#main .wrap-column .go-portfolio .slide .animation {
-  animation: infinite_slide_row 40s linear infinite;
-}
-@keyframes infinite_slide_row {
+@-webkit-keyframes next {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
 }
-#main .wrap-column .go-portfolio .slide::after {
-  content: "";
-  background: rgba(0, 0, 0, 0.3);
-  width: 100%;
-  height: 100%;
-  position: absolute;
+#main .wrap-column .go-portfolio p:nth-child(2) i {
+  margin-left: 3px;
+  animation: next 1.5s infinite;
+}
+#main .recent-work {
+  display: none;
+}
+#main .recent-work.active {
+  display: block;
+  overflow: auto;
+  width: calc(25% - 1px);
+  height: calc(100% - 1px);
+  position: fixed;
   top: 0;
   left: 0;
-}
-#main .wrap-column #recent-work-view {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: -100%;
-  left: 0;
+  background: #feeedf;
+  border: 3px solid #412b8d;
   z-index: 3;
 }
-#main .wrap-column #recent-work-view .cont {
+#main .recent-work.active .close-btn {
   position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  background: #412b8d;
-  color: #feeedf;
-  transition: all 0.3s;
-}
-#main .wrap-column #recent-work-view .cont.active {
-  top: 100%;
-}
-#main .wrap-column #recent-work-view .cont .close-btn {
+  left: 20px;
+  top: 8px;
   font-size: 3em;
-  color: white;
 }
 /* media-query */
 @media (max-width: 979px) {
@@ -408,57 +358,24 @@ nav .lnb-footer a {
   }
   #main .wrap-column .recent {
     padding: 30px 30px 10px;
+    height: 350px;
   }
   #main .wrap-column .recent h3 {
     text-align: right;
     height: 9vh;
   }
-  #main .wrap-column .recent .recent-work {
-    position: relative;
-    width: max-content;
-    right: initial;
-  }
-  #main .wrap-column .recent .recent-work .wrap {
-    width: 58vw;
-    height: 60vw;
-  }
-  #main .wrap-column .recent .recent-work .wrap img {
-    width: 300%;
-    object-position: -130px 63%;
-  }
   #main .wrap-column .go-portfolio {
     max-width: initial;
-    height: 300px;
+    height: 250px;
   }
   #main .wrap-column .go-portfolio p {
     font-size: 3em;
     line-height: 1;
   }
-  #main .wrap-column .go-portfolio .slide {
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-  #main .wrap-column .go-portfolio .slide .slide-list {
-    width: 4200px;
-    height: 100%;
-  }
-  #main .wrap-column .go-portfolio .slide .slide-list .img-list {
-    float: left;
-    width: 2100px;
-    height: 100%;
-  }
-  #main .wrap-column .go-portfolio .slide .slide-list .img-list .img {
-    width: 350px;
-  }
 }
 @media (max-width: 415px) {
   #main .wrap-column .recent h3 {
     height: 12vh;
-  }
-  #main .wrap-column .recent .recent-work .wrap {
-    width: 50vw;
-    height: 53vw;
   }
 }
 #about {
@@ -550,6 +467,7 @@ nav .lnb-footer a {
   display: flex;
   padding: 30px 40px 60px;
   gap: 50px;
+  justify-content: center;
 }
 #about .wrap-column .history h2 {
   font-size: 5em;
@@ -903,7 +821,7 @@ nav .lnb-footer a {
     display: none;
   }
   #portfolio .gallery .wrap-column .list.all {
-    height: 250%;
+    height: 200%;
   }
   #portfolio .gallery .wrap-column .list.all .item:nth-child(n+5) {
     display: flex;
@@ -916,6 +834,7 @@ nav .lnb-footer a {
   #portfolio .view .cont {
     display: flex;
     flex-direction: column;
+    background: #412b8d;
   }
   #portfolio .view .cont .head {
     position: absolute;
@@ -923,9 +842,10 @@ nav .lnb-footer a {
   #portfolio .view .cont .img {
     height: 50%;
     overflow: auto;
+    border-bottom: 1px solid #feeedf;
   }
   #portfolio .view .cont .text {
-    padding-bottom: 0;
+    padding-bottom: 50px;
     height: 50%;
   }
 }
@@ -933,10 +853,16 @@ nav .lnb-footer a {
   #portfolio .gallery .wrap-column .list {
     display: flex;
     flex-direction: column;
-    height: 200%;
+    height: 100%;
+  }
+  #portfolio .gallery .wrap-column .list .item:nth-child(n+3) {
+    display: none;
   }
   #portfolio .gallery .wrap-column .list.all {
-    height: 450%;
+    height: 400%;
+  }
+  #portfolio .gallery .wrap-column .list.all .item:nth-child(n+3) {
+    display: flex;
   }
 }
 #contact {
@@ -986,10 +912,11 @@ nav .lnb-footer a {
   color: #412b8d;
   font-size: 1.5vw;
   font-family: "Montserrat", "Roboto", "Noto Sans KR", sans-serif;
+  resize: none;
 }
 #contact .contact-form form .send-btn {
   height: 15%;
-  font-size: 1.5vw;
+  font-size: 2.5vw;
   transition: all 0.1s ease-in-out;
   font-weight: bold;
   cursor: pointer;
@@ -1037,9 +964,11 @@ nav .lnb-footer a {
 }
 #contact > p {
   position: absolute;
-  bottom: 55px;
+  bottom: 30px;
   right: 20px;
   color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
 }
 #contact .show-btn {
   display: none;
@@ -1054,6 +983,10 @@ nav .lnb-footer a {
   }
   #contact .contact-form .send-btn {
     border: 0;
+    padding: 10px;
+  }
+  #contact > p {
+    bottom: 55px;
   }
   #contact .footer {
     grid-column: span 2;
@@ -1076,6 +1009,9 @@ nav .lnb-footer a {
 #contact .contact-form form .send-btn {
     font-size: 1.8em;
   }
+  #contact .contact-form form .send-btn {
+    border: 2px solid #412b8d;
+  }
   #contact .slide-mask {
     display: none;
   }
@@ -1089,30 +1025,6 @@ nav .lnb-footer a {
   }
   #contact > p {
     display: none;
-  }
-  #contact .show-btn {
-    display: block;
-    position: absolute;
-    bottom: calc(12% + 20px + 80px);
-    right: 20px;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 2px solid black;
-    background: url(../../img/slide_dog_1.JPG) no-repeat 28% 60%;
-    background-size: 400%;
-    font-size: 0;
-    animation: turn-btn 10s infinite linear;
-    transition: all 0.3s;
-  }
-  #contact .show-btn.active {
-    width: 90vw;
-    height: calc(90vh - 61px);
-    border-radius: 10px;
-    animation-play-state: paused;
-    bottom: 5vh;
-    right: 5vw;
-    background-size: cover;
   }
 }
 @media (max-width: 415px) {

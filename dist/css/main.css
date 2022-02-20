@@ -21,8 +21,8 @@
   position: relative;
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 2fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 3fr 1fr;
   background: #412b8d;
   gap: 1px;
 }
@@ -89,109 +89,67 @@
 #main .wrap-column .recent {
   padding: 20px;
   position: relative;
+  cursor: pointer;
 }
 #main .wrap-column .recent h3 {
   font-size: 9vh;
   line-height: 1.2;
-}
-#main .wrap-column .recent .recent-work {
-  position: absolute;
-  right: 30px;
-  bottom: 20px;
-  cursor: pointer;
-}
-#main .wrap-column .recent .recent-work .wrap {
-  width: 240px;
-  height: 260px;
-  border-radius: 50% 50% 0 0;
-  overflow: hidden;
-  border: 5px solid #412b8d;
-}
-#main .wrap-column .recent .recent-work span {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  margin-top: 10px;
-  font-size: 1.1em;
 }
 #main .wrap-column .go-portfolio {
   width: 100%;
   max-width: 500px;
   position: relative;
   cursor: pointer;
+  padding: 25px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 #main .wrap-column .go-portfolio p {
-  position: absolute;
-  padding: 30px;
   text-align: left;
   z-index: 1;
   font-size: 2em;
-  color: white;
 }
-#main .wrap-column .go-portfolio .slide {
-  height: 100%;
-  overflow: hidden;
-  position: relative;
+#main .wrap-column .go-portfolio p:nth-child(2) {
+  text-align: right;
+  font-weight: bold;
+  margin-right: 5px;
 }
-#main .wrap-column .go-portfolio .slide .slide-list {
-  width: 4200px;
-  height: 100%;
-}
-#main .wrap-column .go-portfolio .slide .slide-list .img-list {
-  float: left;
-  width: 2100px;
-  height: 100%;
-}
-#main .wrap-column .go-portfolio .slide .slide-list .img-list .img {
-  width: 350px;
-  height: 100%;
-  float: left;
-  border-right: 1px solid #412b8d;
-}
-#main .wrap-column .go-portfolio .slide .animation {
-  animation: infinite_slide_row 40s linear infinite;
-}
-@keyframes infinite_slide_row {
+@-webkit-keyframes next {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
 }
-#main .wrap-column .go-portfolio .slide::after {
-  content: "";
-  background: rgba(0, 0, 0, 0.3);
-  width: 100%;
-  height: 100%;
-  position: absolute;
+#main .wrap-column .go-portfolio p:nth-child(2) i {
+  margin-left: 3px;
+  animation: next 1.5s infinite;
+}
+#main .recent-work {
+  display: none;
+}
+#main .recent-work.active {
+  display: block;
+  overflow: auto;
+  width: calc(25% - 1px);
+  height: calc(100% - 1px);
+  position: fixed;
   top: 0;
   left: 0;
-}
-#main .wrap-column #recent-work-view {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: -100%;
-  left: 0;
+  background: #feeedf;
+  border: 3px solid #412b8d;
   z-index: 3;
 }
-#main .wrap-column #recent-work-view .cont {
+#main .recent-work.active .close-btn {
   position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  background: #412b8d;
-  color: #feeedf;
-  transition: all 0.3s;
-}
-#main .wrap-column #recent-work-view .cont.active {
-  top: 100%;
-}
-#main .wrap-column #recent-work-view .cont .close-btn {
+  left: 20px;
+  top: 8px;
   font-size: 3em;
-  color: white;
 }
 /* media-query */
 @media (max-width: 979px) {
@@ -244,57 +202,24 @@
   }
   #main .wrap-column .recent {
     padding: 30px 30px 10px;
+    height: 350px;
   }
   #main .wrap-column .recent h3 {
     text-align: right;
     height: 9vh;
   }
-  #main .wrap-column .recent .recent-work {
-    position: relative;
-    width: max-content;
-    right: initial;
-  }
-  #main .wrap-column .recent .recent-work .wrap {
-    width: 58vw;
-    height: 60vw;
-  }
-  #main .wrap-column .recent .recent-work .wrap img {
-    width: 300%;
-    object-position: -130px 63%;
-  }
   #main .wrap-column .go-portfolio {
     max-width: initial;
-    height: 300px;
+    height: 250px;
   }
   #main .wrap-column .go-portfolio p {
     font-size: 3em;
     line-height: 1;
   }
-  #main .wrap-column .go-portfolio .slide {
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-  #main .wrap-column .go-portfolio .slide .slide-list {
-    width: 4200px;
-    height: 100%;
-  }
-  #main .wrap-column .go-portfolio .slide .slide-list .img-list {
-    float: left;
-    width: 2100px;
-    height: 100%;
-  }
-  #main .wrap-column .go-portfolio .slide .slide-list .img-list .img {
-    width: 350px;
-  }
 }
 @media (max-width: 415px) {
   #main .wrap-column .recent h3 {
     height: 12vh;
-  }
-  #main .wrap-column .recent .recent-work .wrap {
-    width: 50vw;
-    height: 53vw;
   }
 }
 

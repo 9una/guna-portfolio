@@ -5,6 +5,23 @@ $(document).ready(function(){
 });
 
 
+//홈 - 최근 작업물
+const recent = document.querySelector('#main .recent');
+const recentWork = document.querySelector('#main .recent-work');
+const remove = recentWork.querySelector('.close-btn');
+
+recent.addEventListener('click',()=>{
+    recentWork.classList.add('active');
+})
+
+function removeRecent(){
+    recentWork.classList.remove('active');
+}
+
+remove.addEventListener('click', removeRecent);
+
+
+/* nav 세션 이동 */
 let curPos = 0,
 position = 0;
 const navTab = document.querySelectorAll('nav .lnb button'),
@@ -43,6 +60,11 @@ function pageMove(){
             navTab[i].classList.add('active');
             page[i].classList.add('active');
 
+            //recent모달창이 active시 remove
+            if(recentWork.classList.contains('active')){
+                removeRecent();
+            }
+
             //translateX
             wrapRow.style.transform = `translateX(-${position}%)`;
         })
@@ -63,16 +85,3 @@ function pageMove(){
 }
 pageMove();
 window.addEventListener('resize', pageMove);
-
-//홈 - 최근 작업물
-const recentWork = document.querySelector('#main .recent-work');
-const recentView = document.querySelector('#recent-work-view .cont');
-const closeBtn = recentView.querySelector('.close-btn');
-
-recentWork.addEventListener('click', ()=>{
-    recentView.classList.add('active');
-});
-
-closeBtn.addEventListener('click', ()=>{
-    closeBtn.parentElement.classList.remove('active');
-})
