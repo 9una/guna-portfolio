@@ -40,7 +40,6 @@
       flex-direction: column;
       justify-content: space-between;
       font-family: "Abril Fatface", cursive;
-      overflow: hidden;
       p {
         font-size: 12vh;
         font-weight: 100;
@@ -98,7 +97,6 @@
     }
     .go-portfolio {
       width: 100%;
-      max-width: 500px;
       position: relative;
       cursor: pointer;
       padding: 25px 30px 30px;
@@ -133,18 +131,18 @@
     }
   }
   .recent-work {
-    display: none;
+    top: -100%;
+    overflow: auto;
+    width: calc(25% - 1px);
+    height: calc(100% - 1px);
+    position: fixed;
+    left: 0;
+    background: $beige;
+    border: 3px solid $navy;
+    z-index: 3;
+    transition: top 0.3s;
     &.active {
-      display: block;
-      overflow: auto;
-      width: calc(25% - 1px);
-      height: calc(100% - 1px);
-      position: fixed;
       top: 0;
-      left: 0;
-      background: $beige;
-      border: 3px solid $navy;
-      z-index: 3;
       .close-btn {
         position: absolute;
         left: 20px;

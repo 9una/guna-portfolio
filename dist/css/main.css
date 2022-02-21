@@ -37,7 +37,6 @@
   flex-direction: column;
   justify-content: space-between;
   font-family: "Abril Fatface", cursive;
-  overflow: hidden;
 }
 #main .wrap-column .main-title p {
   font-size: 12vh;
@@ -97,7 +96,6 @@
 }
 #main .wrap-column .go-portfolio {
   width: 100%;
-  max-width: 500px;
   position: relative;
   cursor: pointer;
   padding: 25px 30px 30px;
@@ -131,19 +129,19 @@
   animation: next 1.5s infinite;
 }
 #main .recent-work {
-  display: none;
-}
-#main .recent-work.active {
-  display: block;
+  top: -100%;
   overflow: auto;
   width: calc(25% - 1px);
   height: calc(100% - 1px);
   position: fixed;
-  top: 0;
   left: 0;
   background: #feeedf;
   border: 3px solid #412b8d;
   z-index: 3;
+  transition: top 0.3s;
+}
+#main .recent-work.active {
+  top: 0;
 }
 #main .recent-work.active .close-btn {
   position: absolute;
