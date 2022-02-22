@@ -420,6 +420,11 @@ nav .lnb-footer a {
   font-weight: bold;
 }
 
+@media screen and (min-width: 979px) and (orientation: portrait) {
+  #main {
+    background: yellowgreen;
+  }
+}
 /* media-query */
 @media (max-width: 979px) {
   #container {

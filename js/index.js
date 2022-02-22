@@ -85,3 +85,6 @@ function pageMove(){
 }
 pageMove();
 window.addEventListener('resize', pageMove);
+
+
+//~ 768
