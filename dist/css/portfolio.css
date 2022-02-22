@@ -28,9 +28,63 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+#portfolio .gallery .wrap-column .list .item h2 {
+  display: none;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(n+7) {
   display: none;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(1) {
+  background: url(../../img/thum-porrtfolio.png) no-repeat center;
+  background-color: #feeedf;
+  background-size: contain;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(2) {
+  background: url(../../img/thum-designhouse.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(3) {
+  background: url(../../img/thum-airbnb.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(4) {
+  background: url(../../img/thum-m-shoppingmall.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(5) {
+  background: url(../../img/thum-shoppingmall-main.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(6) {
+  background: url(../../img/thum-oliveyoung.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(7) {
+  background: url(../../img/thum-megabox.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(8) {
+  background: url(../../img/thum-nhpension.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item::after {
+  content: "";
+  background: #412b8d;
+  position: absolute;
+}
+#portfolio .gallery .wrap-column .list .item:hover {
+  position: relative;
+}
+#portfolio .gallery .wrap-column .list .item:hover::after {
+  width: 100%;
+  height: 100%;
+}
+#portfolio .gallery .wrap-column .list .item:hover h2 {
+  display: block;
+  color: white;
+  z-index: 2;
 }
 #portfolio .gallery .wrap-column .list.all {
   height: 150%;
@@ -67,6 +121,7 @@
   height: 100%;
   top: -100%;
   left: 0;
+  z-index: 3;
 }
 #portfolio .view .cont {
   position: absolute;
@@ -83,7 +138,6 @@
 }
 #portfolio .view .cont > div {
   background: #412b8d;
-  overflow: auto;
 }
 #portfolio .view .cont.active {
   top: 100%;
@@ -91,13 +145,59 @@
 #portfolio .view .cont .head {
   grid-column: span 2;
   padding: 8px 20px;
+  z-index: 3;
 }
 #portfolio .view .cont .head .close-btn {
   font-size: 3em;
   color: #feeedf;
 }
+#portfolio .view .cont .img {
+  overflow: auto;
+  position: relative;
+}
+#portfolio .view .cont .img img {
+  height: auto;
+}
+#portfolio .view .cont .img p {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 30px 0 10px 10px;
+  background: white;
+  color: #412b8d;
+  font-weight: bold;
+}
+#portfolio .view .cont .img p:first-child {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.7);
+  font-weight: normal;
+  color: white;
+}
+#portfolio .view .cont .img::-webkit-scrollbar {
+  width: 7px;
+}
+#portfolio .view .cont .img::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+#portfolio .view .cont .img::-webkit-scrollbar-track {
+  background-color: #e9e9e9;
+}
 #portfolio .view .cont .text {
   padding: 30px;
+  overflow: auto;
+}
+#portfolio .view .cont .text::-webkit-scrollbar {
+  width: 7px;
+}
+#portfolio .view .cont .text::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+#portfolio .view .cont .text::-webkit-scrollbar-track {
+  background-color: #e9e9e9;
 }
 #portfolio .view .cont .text h5 {
   font-size: 1.6em;
@@ -173,11 +273,23 @@
   }
   #portfolio .view .cont .head {
     position: absolute;
+    right: 3px;
+    background: none;
+  }
+  #portfolio .view .cont .head .close-btn {
+    color: white;
+  }
+  #portfolio .view .cont .head .close-btn i {
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   }
   #portfolio .view .cont .img {
     height: 50%;
     overflow: auto;
+    padding: 20px 30px;
     border-bottom: 1px solid #feeedf;
+  }
+  #portfolio .view .cont .img p {
+    margin-left: 0;
   }
   #portfolio .view .cont .text {
     padding-bottom: 50px;
@@ -198,6 +310,16 @@
   }
   #portfolio .gallery .wrap-column .list.all .item:nth-child(n+3) {
     display: flex;
+  }
+  #portfolio .view .cont .head {
+    padding-top: 3px;
+  }
+  #portfolio .view .cont .img {
+    height: 60%;
+    padding: 5px 15px;
+  }
+  #portfolio .view .cont .text {
+    height: 40%;
   }
 }
 

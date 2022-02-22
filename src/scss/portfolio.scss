@@ -25,10 +25,64 @@
           cursor: pointer;
           text-align: center;
           @include flex-center;
-          &:hover {
+          overflow: hidden;
+          h2 {
+            display: none;
           }
           &:nth-child(n + 7) {
             display: none;
+          }
+          &:nth-child(1) {
+            background: url(../../img/thum-porrtfolio.png) no-repeat center;
+            background-color: $beige;
+            background-size: contain;
+          }
+          &:nth-child(2) {
+            background: url(../../img/thum-designhouse.png) no-repeat center top;
+            background-size: cover;
+          }
+          &:nth-child(3) {
+            background: url(../../img/thum-airbnb.png) no-repeat center top;
+            background-size: cover;
+          }
+          &:nth-child(4) {
+            background: url(../../img/thum-m-shoppingmall.png) no-repeat center
+              top;
+            background-size: cover;
+          }
+          &:nth-child(5) {
+            background: url(../../img/thum-shoppingmall-main.png) no-repeat
+              center top;
+            background-size: cover;
+          }
+          &:nth-child(6) {
+            background: url(../../img/thum-oliveyoung.png) no-repeat center top;
+            background-size: cover;
+          }
+          &:nth-child(7) {
+            background: url(../../img/thum-megabox.png) no-repeat center top;
+            background-size: cover;
+          }
+          &:nth-child(8) {
+            background: url(../../img/thum-nhpension.png) no-repeat center top;
+            background-size: cover;
+          }
+          &::after {
+            content: "";
+            background: $navy;
+            position: absolute;
+          }
+          &:hover {
+            position: relative;
+            &::after {
+              width: 100%;
+              height: 100%;
+            }
+            h2 {
+              display: block;
+              color: white;
+              z-index: 2;
+            }
           }
         }
         &.all {
@@ -67,6 +121,7 @@
     height: 100%;
     top: -100%;
     left: 0;
+    z-index: 3;
     .cont {
       position: absolute;
       top: 0;
@@ -81,7 +136,6 @@
       grid-template-rows: 60px 1fr;
       & > div {
         background: $navy;
-        overflow: auto;
       }
       &.active {
         top: 100%;
@@ -89,15 +143,59 @@
       .head {
         grid-column: span 2;
         padding: 8px 20px;
+        z-index: 3;
         .close-btn {
           font-size: 3em;
           color: $beige;
         }
       }
       .img {
+        overflow: auto;
+        position: relative;
+        img {
+          height: auto;
+        }
+        p {
+          display: inline-block;
+          padding: 5px 10px;
+          margin: 30px 0 10px 10px;
+          background: white;
+          color: $navy;
+          font-weight: bold;
+          &:first-child {
+            position: absolute;
+            top: 0;
+            left: 2px;
+            margin: 0;
+            background: rgba(0, 0, 0, 0.7);
+            font-weight: normal;
+            color: white;
+          }
+        }
+        &::-webkit-scrollbar {
+          width: 7px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #888;
+          border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track {
+          background-color: #e9e9e9;
+        }
       }
       .text {
         padding: 30px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+          width: 7px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #888;
+          border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track {
+          background-color: #e9e9e9;
+        }
         h5 {
           font-size: 1.6em;
           background: $beige;
@@ -193,11 +291,23 @@
         background: $navy;
         .head {
           position: absolute;
+          right: 3px;
+          background: none;
+          .close-btn {
+            color: white;
+            i {
+              text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+            }
+          }
         }
         .img {
           height: 50%;
           overflow: auto;
+          padding: 20px 30px;
           border-bottom: 1px solid $beige;
+          p {
+            margin-left: 0;
+          }
         }
         .text {
           padding-bottom: 50px;
@@ -227,6 +337,20 @@
               display: flex;
             }
           }
+        }
+      }
+    }
+    .view {
+      .cont {
+        .head {
+          padding-top: 3px;
+        }
+        .img {
+          height: 60%;
+          padding: 5px 15px;
+        }
+        .text {
+          height: 40%;
         }
       }
     }

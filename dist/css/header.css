@@ -116,6 +116,10 @@ nav .lnb-footer a {
   }
 }
 @media (max-width: 769px) {
+  header {
+    background: #412b8d;
+    border-bottom-color: #feeedf;
+  }
   header .gnb div {
     display: none;
   }
@@ -123,6 +127,7 @@ nav .lnb-footer a {
     display: block !important;
     font-size: 1.8em;
     padding: 0 5px;
+    color: #feeedf;
   }
 
   nav {
@@ -151,6 +156,11 @@ nav .lnb-footer a {
   }
   nav .lnb button:hover::after {
     display: none;
+  }
+}
+@media (max-width: 415px) {
+  header {
+    padding: 0 10px;
   }
 }
 

@@ -117,6 +117,10 @@ nav .lnb-footer a {
   }
 }
 @media (max-width: 769px) {
+  header {
+    background: #412b8d;
+    border-bottom-color: #feeedf;
+  }
   header .gnb div {
     display: none;
   }
@@ -124,6 +128,7 @@ nav .lnb-footer a {
     display: block !important;
     font-size: 1.8em;
     padding: 0 5px;
+    color: #feeedf;
   }
 
   nav {
@@ -152,6 +157,11 @@ nav .lnb-footer a {
   }
   nav .lnb button:hover::after {
     display: none;
+  }
+}
+@media (max-width: 415px) {
+  header {
+    padding: 0 10px;
   }
 }
 #container {
@@ -245,16 +255,25 @@ nav .lnb-footer a {
   padding: 20px;
   position: relative;
   cursor: pointer;
+  background: url(../../img/thum-designhouse.png) no-repeat center top;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #main .wrap-column .recent h3 {
   font-size: 9vh;
-  line-height: 1.2;
+  line-height: 1;
+  text-align: center;
+  background: rgba(49, 24, 135, 0.7);
+  color: white;
+  padding: 8px 20px;
 }
 #main .wrap-column .go-portfolio {
   width: 100%;
   position: relative;
   cursor: pointer;
-  padding: 25px 30px 30px;
+  padding: 20px 25px 35px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -263,6 +282,7 @@ nav .lnb-footer a {
   text-align: left;
   z-index: 1;
   font-size: 2em;
+  line-height: 1;
 }
 #main .wrap-column .go-portfolio p:nth-child(2) {
   text-align: right;
@@ -287,24 +307,119 @@ nav .lnb-footer a {
 #main .recent-work {
   top: -100%;
   overflow: auto;
-  width: calc(25% - 1px);
-  height: calc(100% - 1px);
+  width: 25%;
+  height: 100%;
   position: fixed;
   left: 0;
-  background: #feeedf;
+  background: #412b8d;
   border: 3px solid #412b8d;
   z-index: 3;
   transition: top 0.3s;
+  gap: 1px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 #main .recent-work.active {
   top: 0;
 }
-#main .recent-work.active .close-btn {
-  position: absolute;
-  left: 20px;
-  top: 8px;
-  font-size: 3em;
+#main .recent-work > div {
+  background: #feeedf;
 }
+#main .recent-work .close-btn {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 3em;
+  z-index: 3;
+}
+#main .recent-work .img {
+  overflow: auto;
+  position: relative;
+}
+#main .recent-work .img img {
+  height: auto;
+}
+#main .recent-work .img p {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 30px 0 10px 10px;
+  background: #412b8d;
+  color: white;
+  font-size: 1.2em;
+}
+#main .recent-work .img p:first-child {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.7);
+  font-weight: normal;
+  color: white;
+}
+#main .recent-work .img::-webkit-scrollbar {
+  width: 7px;
+}
+#main .recent-work .img::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+#main .recent-work .img::-webkit-scrollbar-track {
+  background-color: #e9e9e9;
+}
+#main .recent-work .text {
+  padding: 30px;
+  overflow: auto;
+}
+#main .recent-work .text::-webkit-scrollbar {
+  width: 7px;
+}
+#main .recent-work .text::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+#main .recent-work .text::-webkit-scrollbar-track {
+  background-color: #e9e9e9;
+}
+#main .recent-work .text h5 {
+  font-size: 1.6em;
+  background: #feeedf;
+  color: #412b8d;
+  display: inline-block;
+  padding: 3px 10px;
+  margin-bottom: 20px;
+  word-break: keep-all;
+}
+#main .recent-work .text .link {
+  font-size: 1.2em;
+}
+#main .recent-work .text .link span {
+  display: block;
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  margin-left: 3px;
+}
+#main .recent-work .text .link a {
+  padding: 0 5px;
+  display: inline-block;
+  line-height: 1.6;
+  text-decoration: underline;
+  font-weight: bold;
+}
+#main .recent-work .text p {
+  margin: 30px 0 40px;
+  font-size: 1.2em;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+#main .recent-work .text .skill span {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 2px 5px;
+  border: 1px solid #412b8d;
+  font-weight: bold;
+}
+
 /* media-query */
 @media (max-width: 979px) {
   #container {
@@ -355,12 +470,15 @@ nav .lnb-footer a {
     font-size: 2.5em;
   }
   #main .wrap-column .recent {
-    padding: 30px 30px 10px;
     height: 350px;
+    padding: 0;
   }
   #main .wrap-column .recent h3 {
-    text-align: right;
-    height: 9vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   #main .wrap-column .go-portfolio {
     max-width: initial;
@@ -370,10 +488,32 @@ nav .lnb-footer a {
     font-size: 3em;
     line-height: 1;
   }
+  #main .recent-work {
+    display: flex;
+    flex-direction: column;
+    background: #412b8d;
+  }
+  #main .recent-work .close-btn {
+    padding: 8px 20px;
+    right: 0;
+    top: 0;
+  }
+  #main .recent-work .img {
+    height: 50%;
+    overflow: auto;
+    padding: 20px 30px;
+  }
+  #main .recent-work .img p {
+    margin-left: 0;
+  }
+  #main .recent-work .text {
+    padding-bottom: 50px;
+    height: 50%;
+  }
 }
 @media (max-width: 415px) {
-  #main .wrap-column .recent h3 {
-    height: 12vh;
+  #main .wrap-column .main-title {
+    padding: 15px 15px 40px;
   }
 }
 #about {
@@ -691,9 +831,63 @@ nav .lnb-footer a {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+#portfolio .gallery .wrap-column .list .item h2 {
+  display: none;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(n+7) {
   display: none;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(1) {
+  background: url(../../img/thum-porrtfolio.png) no-repeat center;
+  background-color: #feeedf;
+  background-size: contain;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(2) {
+  background: url(../../img/thum-designhouse.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(3) {
+  background: url(../../img/thum-airbnb.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(4) {
+  background: url(../../img/thum-m-shoppingmall.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(5) {
+  background: url(../../img/thum-shoppingmall-main.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(6) {
+  background: url(../../img/thum-oliveyoung.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(7) {
+  background: url(../../img/thum-megabox.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(8) {
+  background: url(../../img/thum-nhpension.png) no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item::after {
+  content: "";
+  background: #412b8d;
+  position: absolute;
+}
+#portfolio .gallery .wrap-column .list .item:hover {
+  position: relative;
+}
+#portfolio .gallery .wrap-column .list .item:hover::after {
+  width: 100%;
+  height: 100%;
+}
+#portfolio .gallery .wrap-column .list .item:hover h2 {
+  display: block;
+  color: white;
+  z-index: 2;
 }
 #portfolio .gallery .wrap-column .list.all {
   height: 150%;
@@ -730,6 +924,7 @@ nav .lnb-footer a {
   height: 100%;
   top: -100%;
   left: 0;
+  z-index: 3;
 }
 #portfolio .view .cont {
   position: absolute;
@@ -746,7 +941,6 @@ nav .lnb-footer a {
 }
 #portfolio .view .cont > div {
   background: #412b8d;
-  overflow: auto;
 }
 #portfolio .view .cont.active {
   top: 100%;
@@ -754,13 +948,59 @@ nav .lnb-footer a {
 #portfolio .view .cont .head {
   grid-column: span 2;
   padding: 8px 20px;
+  z-index: 3;
 }
 #portfolio .view .cont .head .close-btn {
   font-size: 3em;
   color: #feeedf;
 }
+#portfolio .view .cont .img {
+  overflow: auto;
+  position: relative;
+}
+#portfolio .view .cont .img img {
+  height: auto;
+}
+#portfolio .view .cont .img p {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 30px 0 10px 10px;
+  background: white;
+  color: #412b8d;
+  font-weight: bold;
+}
+#portfolio .view .cont .img p:first-child {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.7);
+  font-weight: normal;
+  color: white;
+}
+#portfolio .view .cont .img::-webkit-scrollbar {
+  width: 7px;
+}
+#portfolio .view .cont .img::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+#portfolio .view .cont .img::-webkit-scrollbar-track {
+  background-color: #e9e9e9;
+}
 #portfolio .view .cont .text {
   padding: 30px;
+  overflow: auto;
+}
+#portfolio .view .cont .text::-webkit-scrollbar {
+  width: 7px;
+}
+#portfolio .view .cont .text::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+#portfolio .view .cont .text::-webkit-scrollbar-track {
+  background-color: #e9e9e9;
 }
 #portfolio .view .cont .text h5 {
   font-size: 1.6em;
@@ -836,11 +1076,23 @@ nav .lnb-footer a {
   }
   #portfolio .view .cont .head {
     position: absolute;
+    right: 3px;
+    background: none;
+  }
+  #portfolio .view .cont .head .close-btn {
+    color: white;
+  }
+  #portfolio .view .cont .head .close-btn i {
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   }
   #portfolio .view .cont .img {
     height: 50%;
     overflow: auto;
+    padding: 20px 30px;
     border-bottom: 1px solid #feeedf;
+  }
+  #portfolio .view .cont .img p {
+    margin-left: 0;
   }
   #portfolio .view .cont .text {
     padding-bottom: 50px;
@@ -861,6 +1113,16 @@ nav .lnb-footer a {
   }
   #portfolio .gallery .wrap-column .list.all .item:nth-child(n+3) {
     display: flex;
+  }
+  #portfolio .view .cont .head {
+    padding-top: 3px;
+  }
+  #portfolio .view .cont .img {
+    height: 60%;
+    padding: 5px 15px;
+  }
+  #portfolio .view .cont .text {
+    height: 40%;
   }
 }
 #contact {
@@ -928,17 +1190,18 @@ nav .lnb-footer a {
   height: 100%;
 }
 #contact .slide-mask .slide-img {
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  margin: 10px 10px;
   overflow: hidden;
 }
 #contact .slide-mask .slide-img .slide-list {
-  height: 4800px;
+  height: 3600px;
   display: flex;
   flex-direction: column;
 }
 #contact .slide-mask .slide-img .slide-list .img-list {
-  height: 2400px;
+  height: 1800px;
   display: flex;
   flex-direction: column;
 }
@@ -962,7 +1225,7 @@ nav .lnb-footer a {
 }
 #contact > p {
   position: absolute;
-  bottom: 30px;
+  bottom: 50px;
   right: 20px;
   color: white;
   background: rgba(0, 0, 0, 0.5);
