@@ -80,7 +80,7 @@
             }
             h2 {
               display: block;
-              color: white;
+              color: #fff;
               z-index: 2;
             }
           }
@@ -103,11 +103,11 @@
     transition: all 0.2s ease-in-out;
     &:hover {
       background: $navy;
-      color: white;
+      color: #fff;
     }
     &.scroll {
       background: $navy;
-      color: white;
+      color: #fff;
       cursor: inherit;
       i {
         margin: 0 10px;
@@ -129,7 +129,7 @@
       height: 100%;
       background: $beige;
       gap: 1px;
-      color: $beige;
+      color: #fff;
       transition: all 0.3s;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -142,24 +142,31 @@
       }
       .head {
         grid-column: span 2;
-        padding: 8px 20px;
         z-index: 3;
+        button {
+          padding: 8px 20px;
+        }
         .close-btn {
+          float: right;
           font-size: 3em;
-          color: $beige;
+          color: #fff;
         }
       }
       .img {
         overflow: auto;
         position: relative;
+        text-align: center;
         img {
+          width: auto;
+          max-width: 100%;
           height: auto;
         }
         p {
-          display: inline-block;
+          display: block;
+          width: max-content;
           padding: 5px 10px;
-          margin: 30px 0 10px 10px;
-          background: white;
+          margin: 30px auto 10px;
+          background: #fff;
           color: $navy;
           font-weight: bold;
           &:first-child {
@@ -169,7 +176,7 @@
             margin: 0;
             background: rgba(0, 0, 0, 0.7);
             font-weight: normal;
-            color: white;
+            color: #fff;
           }
         }
         &::-webkit-scrollbar {
@@ -198,7 +205,7 @@
         }
         h5 {
           font-size: 1.6em;
-          background: $beige;
+          background: #fff;
           color: $navy;
           display: inline-block;
           padding: 3px 10px;
@@ -217,7 +224,7 @@
           a {
             padding: 0 5px;
             display: inline-block;
-            color: $beige;
+            color: #fff;
             line-height: 1.6;
             text-decoration: underline;
           }
@@ -233,9 +240,46 @@
             display: inline-block;
             margin-right: 5px;
             padding: 2px 5px;
-            border: 1px solid $beige;
-            color: $beige;
+            border: 1px solid #fff;
+            color: #fff;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 979px) and (orientation: portrait) {
+  #portfolio {
+    .gallery {
+      .wrap-column {
+        .list {
+          display: flex;
+          flex-direction: column;
+          .item {
+            height: 33.333%;
+            &:nth-child(n + 4) {
+              display: none;
+            }
+          }
+          &.all {
+            height: 266.666%;
+            .item:nth-child(n + 4) {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+    .view {
+      .cont {
+        display: flex;
+        flex-direction: column;
+        .img {
+          height: 60%;
+        }
+        .text {
+          height: 40%;
         }
       }
     }
@@ -294,9 +338,10 @@
           right: 3px;
           background: none;
           .close-btn {
-            color: white;
+            color: #fff;
             i {
-              text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+              text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+                1px 1px 0 #000;
             }
           }
         }

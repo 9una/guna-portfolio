@@ -40,11 +40,13 @@
       flex-direction: column;
       justify-content: space-between;
       font-family: "Abril Fatface", cursive;
+      overflow: hidden;
       p {
         font-size: 12vh;
         font-weight: 100;
         line-height: 1;
         z-index: 2;
+        font-style: italic;
       }
       i {
         position: absolute;
@@ -84,6 +86,9 @@
         border: 1px solid $navy;
         border-radius: 50%;
         @include flex-center;
+        position: absolute;
+        bottom: 40px;
+        left: 10%;
       }
     }
     .recent {
@@ -98,7 +103,7 @@
         line-height: 1;
         text-align: center;
         background: rgba(49, 24, 135, 0.7);
-        color: white;
+        color: #fff;
         padding: 8px 20px;
       }
     }
@@ -177,7 +182,7 @@
         padding: 5px 10px;
         margin: 30px 0 10px 10px;
         background: $navy;
-        color: white;
+        color: #fff;
         font-size: 1.2em;
         &:first-child {
           position: absolute;
@@ -186,7 +191,7 @@
           margin: 0;
           background: rgba(0, 0, 0, 0.7);
           font-weight: normal;
-          color: white;
+          color: #fff;
         }
       }
       &::-webkit-scrollbar {
@@ -257,15 +262,6 @@
     }
   }
 }
-
-@media screen and (orientation: landscape) {
-}
-@media screen and (min-width: 979px) and (orientation: portrait) {
-  #main {
-    background: yellowgreen;
-  }
-}
-
 /* media-query */
 @include laptop {
   // ~ 978
@@ -315,7 +311,6 @@
           margin-bottom: 50px;
         }
         span {
-          height: 80px;
           font-size: 2.5em;
         }
       }
@@ -345,6 +340,9 @@
         padding: 8px 20px;
         right: 0;
         top: 0;
+        i {
+          text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+        }
       }
       .img {
         height: 50%;
@@ -367,10 +365,80 @@
     .wrap-column {
       .main-title {
         padding: 15px 15px 40px;
+        p {
+          font-size: 11vh;
+        }
+      }
+      .go-portfolio {
+        height: 200px;
+        p {
+          font-size: 2.2em;
+        }
       }
     }
   }
 }
 
-@media screen {
+@media screen and (min-width: 679px) and (orientation: portrait) {
+  #main {
+    overflow: auto;
+    .wrap-column {
+      display: flex;
+      flex-direction: column;
+      height: max-content;
+      .main-title {
+        gap: 5vh;
+        overflow: initial;
+        p {
+          // font-size: 12vh;
+        }
+        span {
+          position: relative;
+          bottom: 0;
+          left: 0;
+          font-size: 2vh;
+        }
+      }
+      .recent {
+        padding: 0;
+        h3 {
+          width: 100%;
+          height: 100%;
+          @include flex-center;
+        }
+      }
+      .go-portfolio {
+        max-width: initial;
+        height: 15%;
+      }
+    }
+    .recent-work {
+      display: flex;
+      flex-direction: column;
+      .img {
+        height: 60%;
+      }
+      .text {
+        height: 40%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 979px) and (orientation: portrait) {
+  #main .wrap-column {
+    height: 100%;
+    .main-title {
+      height: 50%;
+      p {
+        font-size: 8.5vh;
+      }
+    }
+    .recent {
+      height: 35%;
+    }
+    .go-portfolio {
+      height: 15%;
+    }
+  }
 }
