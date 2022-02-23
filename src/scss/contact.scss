@@ -116,6 +116,20 @@
   }
 }
 
+@media screen and (min-width: 979px) and (orientation: portrait) {
+  #contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    .contact-form {
+      height: 60% !important;
+    }
+    .slide-mask {
+      height: 40% !important;
+    }
+  }
+}
+
 /* media-query */
 @include laptop {
   // ~ 978

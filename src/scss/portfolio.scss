@@ -242,6 +242,43 @@
   }
 }
 
+@media screen and (min-width: 979px) and (orientation: portrait) {
+  #portfolio {
+    .gallery {
+      .wrap-column {
+        .list {
+          display: flex;
+          flex-direction: column;
+          .item {
+            height: 33.333%;
+            &:nth-child(n + 4) {
+              display: none;
+            }
+          }
+          &.all {
+            height: 266.666%;
+            .item:nth-child(n + 4) {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+    .view {
+      .cont {
+        display: flex;
+        flex-direction: column;
+        .img {
+          height: 60%;
+        }
+        .text {
+          height: 40%;
+        }
+      }
+    }
+  }
+}
+
 /* media-query */
 @include laptop {
   // ~ 978
