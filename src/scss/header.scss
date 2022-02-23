@@ -24,7 +24,7 @@ header {
       font-weight: bold;
       letter-spacing: 0.05em;
       background: $navy;
-      color: white;
+      color: #fff;
       padding: 5px 6px 5px 10px;
     }
     div {
@@ -138,7 +138,7 @@ nav {
         display: block !important;
         font-size: 1.8em;
         padding: 0 5px;
-        color: $beige;
+        color: #fff;
       }
     }
   }
@@ -161,7 +161,7 @@ nav {
         border-bottom: 1px solid $navy;
         &:hover {
           background: $navy;
-          color: white;
+          color: #fff;
           &::after {
             display: none;
           }

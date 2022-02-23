@@ -24,7 +24,7 @@ header .gnb .home {
   font-weight: bold;
   letter-spacing: 0.05em;
   background: #412b8d;
-  color: white;
+  color: #fff;
   padding: 5px 6px 5px 10px;
 }
 header .gnb div {
@@ -127,7 +127,7 @@ nav .lnb-footer a {
     display: block !important;
     font-size: 1.8em;
     padding: 0 5px;
-    color: #feeedf;
+    color: #fff;
   }
 
   nav {
@@ -152,7 +152,7 @@ nav .lnb-footer a {
   }
   nav .lnb button:hover {
     background: #412b8d;
-    color: white;
+    color: #fff;
   }
   nav .lnb button:hover::after {
     display: none;

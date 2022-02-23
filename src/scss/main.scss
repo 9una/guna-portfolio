@@ -103,7 +103,7 @@
         line-height: 1;
         text-align: center;
         background: rgba(49, 24, 135, 0.7);
-        color: white;
+        color: #fff;
         padding: 8px 20px;
       }
     }
@@ -182,7 +182,7 @@
         padding: 5px 10px;
         margin: 30px 0 10px 10px;
         background: $navy;
-        color: white;
+        color: #fff;
         font-size: 1.2em;
         &:first-child {
           position: absolute;
@@ -191,7 +191,7 @@
           margin: 0;
           background: rgba(0, 0, 0, 0.7);
           font-weight: normal;
-          color: white;
+          color: #fff;
         }
       }
       &::-webkit-scrollbar {
@@ -340,6 +340,9 @@
         padding: 8px 20px;
         right: 0;
         top: 0;
+        i {
+          text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+        }
       }
       .img {
         height: 50%;
@@ -387,7 +390,7 @@
         gap: 5vh;
         overflow: initial;
         p {
-          font-size: 10vh;
+          // font-size: 12vh;
         }
         span {
           position: relative;
