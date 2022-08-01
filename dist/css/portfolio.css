@@ -37,15 +37,15 @@
   display: none;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(1) {
-  background: url("../../img/thum-") no-repeat center;
-  background-size: contain;
+  background: url("../../img/thum-freeprie2.png") no-repeat center;
+  background-size: cover;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(2) {
-  background: url("../../img/thum-") no-repeat center top;
+  background: url("../../img/thum-vsc.png") no-repeat center top;
   background-size: cover;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(3) {
-  background: url("../../img/thum-") no-repeat center top;
+  background: url("../../img/thum-spw.png") no-repeat center top;
   background-size: cover;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(4) {
@@ -177,7 +177,6 @@
   max-width: 100%;
   height: auto;
   padding: 5px;
-  border: 2px solid #fff;
 }
 #portfolio .view .cont .img p {
   display: block;
