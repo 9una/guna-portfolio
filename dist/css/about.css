@@ -32,6 +32,26 @@
   display: inline-block;
   width: 100%;
 }
+#about .wrap-column .tag {
+  text-align: center;
+}
+#about .wrap-column .tag span {
+  display: inline-block;
+  border: 1px solid #412b8d;
+  color: #412b8d;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+#about .wrap-column .tag span:not(:last-child) {
+  margin-right: 6px;
+}
+#about .wrap-column .tag span:hover {
+  background: #412b8d;
+  color: #fff;
+}
 #about .wrap-column .skill .cont,
 #about .wrap-column .history .cont {
   height: 80%;
@@ -39,6 +59,7 @@
 #about .wrap-column .skill .cont .text,
 #about .wrap-column .history .cont .text {
   padding: 10px;
+  font-size: 1.1em;
 }
 #about .wrap-column .skill .cont {
   display: grid;
@@ -166,6 +187,10 @@
     max-width: 450px;
     text-align: center;
     font-size: 1.1em;
+  }
+  #about .wrap-column .tag {
+    text-align: left;
+    padding: 16px;
   }
   #about .wrap-column .skill {
     padding: 30px 2% 50px;

@@ -33,38 +33,50 @@
             display: none;
           }
           &:nth-child(1) {
-            background: url(../../img/thum-porrtfolio.png) no-repeat center;
-            background-color: $beige;
+            background: url('../../img/thum-') no-repeat center;
             background-size: contain;
           }
           &:nth-child(2) {
-            background: url(../../img/thum-designhouse.png) no-repeat center top;
+            background: url('../../img/thum-') no-repeat center top;
             background-size: cover;
           }
           &:nth-child(3) {
-            background: url(../../img/thum-airbnb.png) no-repeat center top;
+            background: url('../../img/thum-') no-repeat center top;
             background-size: cover;
           }
           &:nth-child(4) {
-            background: url(../../img/thum-m-shoppingmall.png) no-repeat center
-              top;
-            background-size: cover;
+            background: url('../../img/thum-porrtfolio.png') no-repeat center;
+            background-color: $beige;
+            background-size: contain;
           }
           &:nth-child(5) {
-            background: url(../../img/thum-shoppingmall-main.png) no-repeat
-              center top;
+            background: url('../../img/thum-designhouse.png') no-repeat center top;
             background-size: cover;
           }
           &:nth-child(6) {
-            background: url(../../img/thum-oliveyoung.png) no-repeat center top;
+            background: url('../../img/thum-airbnb.png') no-repeat center top;
             background-size: cover;
           }
           &:nth-child(7) {
-            background: url(../../img/thum-megabox.png) no-repeat center top;
+            background: url('../../img/thum-m-shoppingmall.png') no-repeat center
+              top;
             background-size: cover;
           }
           &:nth-child(8) {
-            background: url(../../img/thum-nhpension.png) no-repeat center top;
+            background: url('../../img/thum-shoppingmall-main.png') no-repeat
+              center top;
+            background-size: cover;
+          }
+          &:nth-child(9) {
+            background: url('../../img/thum-oliveyoung.png') no-repeat center top;
+            background-size: cover;
+          }
+          &:nth-child(10) {
+            background: url('../../img/thum-megabox.png') no-repeat center top;
+            background-size: cover;
+          }
+          &:nth-child(11) {
+            background: url('../../img/thum-nhpension.png') no-repeat center top;
             background-size: cover;
           }
           &::after {
@@ -86,7 +98,7 @@
           }
         }
         &.all {
-          height: 150%;
+          height: 200%;
           .item:nth-child(n + 7) {
             display: flex;
           }
@@ -156,10 +168,13 @@
         overflow: auto;
         position: relative;
         text-align: center;
+        padding:20px;
         img {
           width: auto;
           max-width: 100%;
           height: auto;
+          padding:5px;
+          border:2px solid #fff;
         }
         p {
           display: block;
@@ -169,15 +184,15 @@
           background: #fff;
           color: $navy;
           font-weight: bold;
-          &:first-child {
-            position: absolute;
-            top: 0;
-            left: 2px;
-            margin: 0;
-            background: rgba(0, 0, 0, 0.7);
-            font-weight: normal;
-            color: #fff;
-          }
+          // &:first-child {
+          //   position: absolute;
+          //   top: 0;
+          //   left: 2px;
+          //   margin: 0;
+          //   background: rgba(0, 0, 0, 0.7);
+          //   font-weight: normal;
+          //   color: #fff;
+          // }
         }
         &::-webkit-scrollbar {
           width: 7px;
@@ -306,7 +321,7 @@
             }
           }
           &.all {
-            height: 200%;
+            height: 300%;
             .item:nth-child(n + 5) {
               display: flex;
             }
@@ -322,12 +337,6 @@
 @include tablet {
   // ~ 768
   #portfolio {
-    .gallery {
-      .wrap-column {
-        .list {
-        }
-      }
-    }
     .view {
       .cont {
         display: flex;
@@ -377,7 +386,7 @@
             }
           }
           &.all {
-            height: 400%;
+            height: 550%;
             .item:nth-child(n + 3) {
               display: flex;
             }

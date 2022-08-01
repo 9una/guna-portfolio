@@ -627,6 +627,26 @@ nav .lnb-footer a {
   display: inline-block;
   width: 100%;
 }
+#about .wrap-column .tag {
+  text-align: center;
+}
+#about .wrap-column .tag span {
+  display: inline-block;
+  border: 1px solid #412b8d;
+  color: #412b8d;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+#about .wrap-column .tag span:not(:last-child) {
+  margin-right: 6px;
+}
+#about .wrap-column .tag span:hover {
+  background: #412b8d;
+  color: #fff;
+}
 #about .wrap-column .skill .cont,
 #about .wrap-column .history .cont {
   height: 80%;
@@ -634,6 +654,7 @@ nav .lnb-footer a {
 #about .wrap-column .skill .cont .text,
 #about .wrap-column .history .cont .text {
   padding: 10px;
+  font-size: 1.1em;
 }
 #about .wrap-column .skill .cont {
   display: grid;
@@ -761,6 +782,10 @@ nav .lnb-footer a {
     max-width: 450px;
     text-align: center;
     font-size: 1.1em;
+  }
+  #about .wrap-column .tag {
+    text-align: left;
+    padding: 16px;
   }
   #about .wrap-column .skill {
     padding: 30px 2% 50px;
@@ -917,36 +942,48 @@ nav .lnb-footer a {
   display: none;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(1) {
-  background: url(../../img/thum-porrtfolio.png) no-repeat center;
-  background-color: #feeedf;
+  background: url("../../img/thum-") no-repeat center;
   background-size: contain;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(2) {
-  background: url(../../img/thum-designhouse.png) no-repeat center top;
+  background: url("../../img/thum-") no-repeat center top;
   background-size: cover;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(3) {
-  background: url(../../img/thum-airbnb.png) no-repeat center top;
+  background: url("../../img/thum-") no-repeat center top;
   background-size: cover;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(4) {
-  background: url(../../img/thum-m-shoppingmall.png) no-repeat center top;
-  background-size: cover;
+  background: url("../../img/thum-porrtfolio.png") no-repeat center;
+  background-color: #feeedf;
+  background-size: contain;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(5) {
-  background: url(../../img/thum-shoppingmall-main.png) no-repeat center top;
+  background: url("../../img/thum-designhouse.png") no-repeat center top;
   background-size: cover;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(6) {
-  background: url(../../img/thum-oliveyoung.png) no-repeat center top;
+  background: url("../../img/thum-airbnb.png") no-repeat center top;
   background-size: cover;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(7) {
-  background: url(../../img/thum-megabox.png) no-repeat center top;
+  background: url("../../img/thum-m-shoppingmall.png") no-repeat center top;
   background-size: cover;
 }
 #portfolio .gallery .wrap-column .list .item:nth-child(8) {
-  background: url(../../img/thum-nhpension.png) no-repeat center top;
+  background: url("../../img/thum-shoppingmall-main.png") no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(9) {
+  background: url("../../img/thum-oliveyoung.png") no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(10) {
+  background: url("../../img/thum-megabox.png") no-repeat center top;
+  background-size: cover;
+}
+#portfolio .gallery .wrap-column .list .item:nth-child(11) {
+  background: url("../../img/thum-nhpension.png") no-repeat center top;
   background-size: cover;
 }
 #portfolio .gallery .wrap-column .list .item::after {
@@ -967,7 +1004,7 @@ nav .lnb-footer a {
   z-index: 2;
 }
 #portfolio .gallery .wrap-column .list.all {
-  height: 150%;
+  height: 200%;
 }
 #portfolio .gallery .wrap-column .list.all .item:nth-child(n+7) {
   display: flex;
@@ -1038,11 +1075,14 @@ nav .lnb-footer a {
   overflow: auto;
   position: relative;
   text-align: center;
+  padding: 20px;
 }
 #portfolio .view .cont .img img {
   width: auto;
   max-width: 100%;
   height: auto;
+  padding: 5px;
+  border: 2px solid #fff;
 }
 #portfolio .view .cont .img p {
   display: block;
@@ -1052,15 +1092,6 @@ nav .lnb-footer a {
   background: #fff;
   color: #412b8d;
   font-weight: bold;
-}
-#portfolio .view .cont .img p:first-child {
-  position: absolute;
-  top: 0;
-  left: 2px;
-  margin: 0;
-  background: rgba(0, 0, 0, 0.7);
-  font-weight: normal;
-  color: #fff;
 }
 #portfolio .view .cont .img::-webkit-scrollbar {
   width: 7px;
@@ -1171,7 +1202,7 @@ nav .lnb-footer a {
     display: none;
   }
   #portfolio .gallery .wrap-column .list.all {
-    height: 200%;
+    height: 300%;
   }
   #portfolio .gallery .wrap-column .list.all .item:nth-child(n+5) {
     display: flex;
@@ -1221,7 +1252,7 @@ nav .lnb-footer a {
     display: none;
   }
   #portfolio .gallery .wrap-column .list.all {
-    height: 400%;
+    height: 550%;
   }
   #portfolio .gallery .wrap-column .list.all .item:nth-child(n+3) {
     display: flex;

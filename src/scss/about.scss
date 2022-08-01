@@ -35,14 +35,34 @@
         width: 100%;
       }
     }
+    .tag {
+      text-align: center;
+      span {
+        display: inline-block;
+        border:1px solid $navy;
+        // background: $navy;
+        color: $navy;
+        padding:4px 10px;
+        border-radius:999px;
+        font-size:1.1em;
+        margin-bottom:6px;
+        transition: background 0.15s, color 0.15s;
+        &:not(:last-child) {
+          margin-right:6px;
+        }
+        &:hover {
+          background: $navy;
+          color:#fff;
+        }
+      }
+    }
     .skill,
     .history {
       .cont {
         height: 80%;
-        .img {
-        }
         .text {
           padding: 10px;
+          font-size:1.1em;
         }
       }
     }
@@ -69,8 +89,6 @@
               word-break: keep-all;
             }
           }
-        }
-        .skill-cont {
         }
       }
     }
@@ -190,6 +208,10 @@
           text-align: center;
           font-size: 1.1em;
         }
+      }
+      .tag {
+        text-align: left;
+        padding: 16px;
       }
       .skill {
         padding: 30px 2% 50px;

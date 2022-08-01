@@ -10,7 +10,7 @@ $(document).ready(function() {
               message : document.querySelector('#contact form textarea').value
         };
 
-        if(templateParams.name.length == 0 || templateParams.email.length == 0 sa|| templateParams.message.length == 0){
+        if(templateParams.name.length == 0 || templateParams.email.length == 0 || templateParams.message.length == 0){
             alert('입력란이 비어있습니다. 다시 확인해 주세요 : )')
         }else {
             //emailjs.send('service ID', 'template ID', 보낼 내용이 담긴 객체) 
