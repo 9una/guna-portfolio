@@ -5,22 +5,6 @@ $(document).ready(function(){
 });
 
 
-//홈 - 최근 작업물
-const recent = document.querySelector('#main .recent');
-const recentWork = document.querySelector('#main .recent-work');
-const remove = recentWork.querySelector('.close-btn');
-
-recent.addEventListener('click',()=>{
-    recentWork.classList.add('active');
-})
-
-function removeRecent(){
-    recentWork.classList.remove('active');
-}
-
-remove.addEventListener('click', removeRecent);
-
-
 /* nav 세션 이동 */
 let curPos = 0,
 position = 0;
@@ -60,24 +44,10 @@ function pageMove(){
             navTab[i].classList.add('active');
             page[i].classList.add('active');
 
-            //recent모달창이 active시 remove
-            if(recentWork.classList.contains('active')){
-                removeRecent();
-            }
-
             //translateX
             wrapRow.style.transform = `translateX(-${position}%)`;
         })
     }
-    
-    const goPortfolio = document.querySelector('.go-portfolio');
-    goPortfolio.addEventListener('click',()=>{
-        curPos = 2;
-        navTab[0].classList.remove('active');
-        navTab[2].classList.add('active');
-        page[2].classList.add('active');
-        wrapRow.style.transform = `translateX(-${curPos * pageWidth}%)`;
-    })
 
     if(window.innerWidth < 769){
         mobileNavClose();

@@ -43,7 +43,6 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.3s;
 }
 nav .lnb {
   display: inline-block;
