@@ -1,7 +1,6 @@
 $(document).ready(function(){
     $('#about').load("about.html");
     $('#portfolio').load("portfolio.html");
-    $('#footer').load("footer.html");
 });
 
 

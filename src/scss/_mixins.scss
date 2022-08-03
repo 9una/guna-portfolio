@@ -18,6 +18,12 @@
   }
 } // ~ 978
 
+@mixin desktop {
+  @media (max-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+} // ~ 1200
+
 @mixin flex-center {
   display: flex;
   align-items: center;

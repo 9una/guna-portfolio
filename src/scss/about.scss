@@ -29,6 +29,9 @@
         // width: calc(100% - 380px);
         line-height: 1.5;
         font-size: 1.3em;
+        strong {
+          font-size:1.4em;
+        }
       }
       span {
         display: inline-block;
@@ -99,12 +102,12 @@
       .title {
         border-right: 1px solid $navy;
         overflow: hidden;
-        background: url(../../img/star-s.png) no-repeat center;
+        background:url('../../img/star-l.png')no-repeat center / auto 75%;
         h4 {
           height: 100%;
           @include flex-center;
-          font-size: 2em;
-          transform: rotate(15deg);
+          font-size: 4vw;
+          transform: rotate(6deg);
           text-align: center;
           word-break: keep-all;
         }
@@ -178,6 +181,7 @@
           left: calc(1.5em + 30px);
           transform-origin: 0 0;
           transform: rotate(90deg);
+          font-size:9vw;
         }
         .cont {
           margin-left: calc(1.5em + 30px + 70px);
@@ -206,7 +210,10 @@
           width: 100%;
           max-width: 450px;
           text-align: center;
-          font-size: 1.1em;
+          font-size: 2.1vw;
+          strong {
+            font-size:3vw;
+          }
         }
       }
       .tag {
@@ -267,7 +274,6 @@
       .history {
         padding: 30px 25px 40px;
         h2 {
-          font-size: 4em;
           left: calc(1.5em + 15px);
         }
         .cont {

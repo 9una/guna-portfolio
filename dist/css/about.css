@@ -28,6 +28,9 @@
   line-height: 1.5;
   font-size: 1.3em;
 }
+#about .wrap-column .about-text p strong {
+  font-size: 1.4em;
+}
 #about .wrap-column .about-text span {
   display: inline-block;
   width: 100%;
@@ -87,15 +90,15 @@
 #about .wrap-column .mind .title {
   border-right: 1px solid #412b8d;
   overflow: hidden;
-  background: url(../../img/star-s.png) no-repeat center;
+  background: url("../../img/star-l.png") no-repeat center/auto 75%;
 }
 #about .wrap-column .mind .title h4 {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2em;
-  transform: rotate(15deg);
+  font-size: 4vw;
+  transform: rotate(6deg);
   text-align: center;
   word-break: keep-all;
 }
@@ -163,6 +166,7 @@
     left: calc(1.5em + 30px);
     transform-origin: 0 0;
     transform: rotate(90deg);
+    font-size: 9vw;
   }
   #about .wrap-column .history .cont {
     margin-left: calc(1.5em + 30px + 70px);
@@ -186,7 +190,10 @@
     width: 100%;
     max-width: 450px;
     text-align: center;
-    font-size: 1.1em;
+    font-size: 2.1vw;
+  }
+  #about .wrap-column .about-text .text strong {
+    font-size: 3vw;
   }
   #about .wrap-column .tag {
     text-align: left;
@@ -245,7 +252,6 @@
     padding: 30px 25px 40px;
   }
   #about .wrap-column .history h2 {
-    font-size: 4em;
     left: calc(1.5em + 15px);
   }
   #about .wrap-column .history .cont {
