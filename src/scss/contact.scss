@@ -20,6 +20,7 @@
     h3 {
       font-size: 10em;
       padding-bottom:3vh;
+      line-height:1;
       b {
         color:$beige;
           text-shadow: -1px -1px 0 $navy,
@@ -55,7 +56,7 @@
       .send-btn {
         display: inline-block;
         width:fit-content;
-        margin-top:50px;
+        margin-top:3vh;
         padding: 10px 30px;
         font-size: 1.8vw;
         font-weight: bold;
@@ -84,7 +85,10 @@
     flex-direction: column;
     gap: 0;
     .contact-form {
-      height: 60% !important;
+      padding-top:50px;
+      form {
+        margin-bottom: auto;
+      }
     }
   }
 }

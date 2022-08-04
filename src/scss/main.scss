@@ -307,5 +307,11 @@
 @media screen and (min-width: 979px) and (orientation: portrait) {
   #main .wrap-column {
     height: 100%;
+    .main-title {
+      padding-top:50px;
+      .right-bottom {
+        margin-bottom:auto;
+      }
+    }
   }
 }

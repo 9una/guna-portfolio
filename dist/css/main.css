@@ -287,6 +287,12 @@
   #main .wrap-column {
     height: 100%;
   }
+  #main .wrap-column .main-title {
+    padding-top: 50px;
+  }
+  #main .wrap-column .main-title .right-bottom {
+    margin-bottom: auto;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
